@@ -1,5 +1,5 @@
 ---
-title: GoBackup
+title: Simple tool for backup your databases, files to cloud storages.
 ---
 
 <div class="welcome">
