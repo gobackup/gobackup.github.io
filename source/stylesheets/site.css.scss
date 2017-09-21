@@ -43,6 +43,12 @@ a {
     color: rgba(0,0,0,.42);
   }
 
+  .badges {
+    a:link,
+    a:visited,
+    a:hover { border: 0; }
+  }
+
 }
 
 header {

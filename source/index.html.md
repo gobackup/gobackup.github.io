@@ -6,6 +6,11 @@ title: GoBackup
   <img class="logo" src="/images/gobackup.svg" alt="GoBackup" />
   <h1>GoBackup</h1>
   <h2>Simple tool for backup your databases, files to cloud storages.</h2>
+  <p class="badges">
+    <a href="https://travis-ci.org/huacnlee/gobackup"><img src="https://travis-ci.org/huacnlee/gobackup.svg?branch=master" alt="Build Status" /></a>
+
+    <a href="https://github.com/huacnlee/gobackup/blob/master/LICENSE" target="_blank"><img src="/images/mit-badge.svg" /></a>
+  </p>
 </div>
 
 GoBackup is a fullstack backup tool design for web servers similar with [backup/backup](https://github.com/backup/backup), work with Crontab to backup automatically.
