@@ -47,6 +47,10 @@ Use `tar` command to archive many file or path into a `.tar` file.
 
 - Tgz - `.tar.gz`
 
+### Encryptor
+
+- OpenSSL
+
 ### Storages
 
 - Local
