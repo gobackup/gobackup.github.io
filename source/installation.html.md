@@ -6,7 +6,7 @@ title: Installation
 
 You can easy install GoBackup, because it's a single binray file.
 
-## Linux
+## macOS / Linux
 
 ```bash
 $ curl -sSL https://git.io/gobackup | bash
