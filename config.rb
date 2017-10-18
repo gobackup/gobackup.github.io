@@ -15,6 +15,7 @@ page '/*.txt', layout: false
 
 set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true,
+               smartypants: true,
                gh_blockcode: true,
                tables: true,
                # 避免 Ruby 的变量 foo_bar_dar 被认为下划线
@@ -24,6 +25,7 @@ set :markdown, fenced_code_blocks: true,
                autolink: true,
                html: true
 
+activate :syntax
 activate :directory_indexes
 
 configure :build do
