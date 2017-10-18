@@ -25,6 +25,7 @@ models:
       type: tgz
     store_with:
       type: local
+      keep: 20
       path: /data/backups
     databases:
       my_app:
