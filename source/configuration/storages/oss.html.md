@@ -8,7 +8,7 @@ Storage backup file to [Aliyun OSS](https://www.aliyun.com/product/oss).
 
 ## Storage config keys
 
-`type: s3`
+`type: oss`
 
 - `bucket` - OSS bucket name
 - `endpoint` - Endpoint of OSS server, default: `oss-cn-beijing.aliyuncs.com`
