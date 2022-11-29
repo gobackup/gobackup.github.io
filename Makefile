@@ -1,5 +1,5 @@
 release:
 	rm -Rf build/
-	rake publish
+	bundle exec rake publish
 serve:
-	middleman serve
+	bundle exec middleman serve

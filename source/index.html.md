@@ -7,9 +7,11 @@ title: Simple tool for backup your databases, files to cloud storages.
   <h1>GoBackup</h1>
   <h2>Simple tool for backup your databases, files to cloud storages.</h2>
   <p class="badges">
+    <a href="https://github.com/huacnlee/gobackup/releases"><img src="https://img.shields.io/github/v/release/huacnlee/gobackup?label=Version&color=1" alt="GitHub release (latest by date)"></a>
     <a href="https://travis-ci.org/huacnlee/gobackup"><img src="https://travis-ci.org/huacnlee/gobackup.svg?branch=master" alt="Build Status" /></a>
 
     <a href="https://github.com/huacnlee/gobackup/blob/master/LICENSE" target="_blank"><img src="/images/mit-badge.svg" /></a>
+
   </p>
 </div>
 
@@ -19,7 +21,7 @@ You can write a config file, run `gobackup perform` command by once to dump data
 
 It's allow you store the backup file to local, FTP or other cloud storages.
 
------
+---
 
 GoBackup 是一个类似 backup/backup 的一站式备份工具，为中小型服务器／个人服务器而设计，配合 Crontab 以实现定时备份的目的。
 
