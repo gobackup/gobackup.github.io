@@ -58,6 +58,12 @@ Use `tar` command to archive many file or path into a `.tar` file.
 - Local
 - FTP
 - SCP - Upload via SSH copy
-- [Amazon S3](https://aws.amazon.com/s3/)
-- [Aliyun OSS](https://www.aliyun.com/product/oss)
-- [Google Cloud Storage](https://cloud.google.com/storage)
+- [Amazon S3](/configuration/storages/s3/)
+- [Aliyun OSS](/configuration/storages/oss)
+- [Google Cloud Storage](/configuration/storages/gcs)
+- [Backblaze B2 Cloud Storage](/configuration/storages/b2)
+- [Cloudflare R2](/configuration/storages/r2)
+- [DigitalOcean Spaces](/configuration/storages/spaces)
+- [QCloud COS](/configuration/storages/cos)
+- [UCloud US3](/configuration/storages/us3)
+- [Qiniu Kodo](/configuration/storages/kodo)
