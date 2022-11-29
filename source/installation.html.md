@@ -4,6 +4,8 @@ title: Installation
 
 <h1>Installation</h1>
 
+<p style="text-align: center"><a href="https://github.com/huacnlee/gobackup/releases"><img src="https://img.shields.io/github/v/release/huacnlee/gobackup?label=Version&color=1" alt="GitHub release (latest by date)"></a></p>
+
 You can easy install GoBackup, because it's a single binray file.
 
 ## macOS / Linux
