@@ -4,18 +4,74 @@ title: Backup Schedule
 
 # Backup Schedule
 
-You may want run backup in scheduled, you need [Crontab](https://en.wikipedia.org/wiki/Cron):
+> since: 1.3.0
+
+GoBackup built in a daemon mode, use `gobackup start` to start as service in background.
+
+You can configure the `schedule` for each models, it will run backup task at the time you set.
+
+```yml
+models:
+  my_backup:
+    schedule:
+      # At 04:05 on Sunday.
+      cron: "5 4 * * sun"
+    storages:
+      local:
+        type: local
+        path: /path/to/backups
+    databases:
+      mysql:
+        type: mysql
+        host: localhost
+        port: 3306
+        database: my_database
+        username: root
+        password: password
+  other_backup:
+    # At 04:05 on every day.
+    schedule:
+      every: "1day",
+      at: "04:05"
+    storages:
+      local:
+        type: local
+        path: /path/to/backups
+    databases:
+      mysql:
+        type: mysql
+        host: localhost
+        port: 3306
+        database: my_database
+        username: root
+        password: password
+```
+
+And then start daemon:
+
+```shell
+gobackup start
+```
+
+Now, there have a service named `gobackup` as running in background.
+
+```
+$ ps aux | grep gobackup
+jason            20443   0.0  0.1 409232800   8912   ??  Ss    7:47PM   0:00.02 gobackup run
+```
+
+> NOTE: If you wants start without daemon, use gobackup run instead.
+
+## Signal handling
+
+GoBackup will handle the following signals:
+
+- `HUP` - Hot reload configuration.
+- `QUIT` - Graceful shutdown.
 
 ```bash
-$ crontab -e
+# Reload configuration
+$ kill -HUP 20443
+# Exit daemon
+$ kill -QUIT 20443
 ```
-
-Append this line and save it:
-
-```
-0 0 * * * /usr/local/bin/gobackup perform >> ~/.gobackup/gobackup.log
-```
-
-> 0 0 * * * means run at 0:00 AM, every day.
-
-And after a day, you can check up the execute status by ~/.gobackup/gobackup.log.
