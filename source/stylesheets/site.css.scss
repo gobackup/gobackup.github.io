@@ -176,6 +176,23 @@ header {
     margin: 0.4em 0 0.6em;
   }
 
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    tr {
+      border-top: 1px solid #d0d7de;
+    }
+
+    th,
+    td {
+      padding: 6px 13px;
+      border: 1px solid #d0d7de;
+      text-align: left;
+      font-weight: normal;
+    }
+  }
+
   code,
   tt {
     color: gray;

@@ -1,0 +1,59 @@
+---
+title: Spliter
+---
+
+# Spliter
+
+> since: 1.3.0
+
+`split_with` config allows us to split the backup file into multiple files, by each chunk size limit.
+
+## Config
+
+- `chunk_size` - Each chunk file size limit
+
+## Example
+
+```yml
+models:
+  my_backup:
+    encrypt_with:
+      type: openssl
+      password: 123456
+      salt: false
+    split_with:
+      chunk_size: 100m
+    storages:
+      local:
+        type: local
+        keep: 2
+        path: /tmp/demo
+```
+
+```
+2022/12/04 22:23:19 [Model: demo] WorkDir: /tmp/gobackup619301606/1670221399175830369/demo
+2022/12/04 22:23:19 [Database] => database | postgresql: postgresql
+2022/12/04 22:23:19 [PostgreSQL] -> Dumping PostgreSQL...
+2022/12/04 22:23:19 [PostgreSQL] dump path: /tmp/gobackup619301606/1670221399175830369/demo/postgresql/postgresql/demo.sql
+2022/12/04 22:23:19 [Database] Dump succeeded
+2022/12/04 22:23:19 [Compressor] => Compress | xz
+2022/12/04 22:23:19 [Compressor] -> /tmp/gobackup619301606/1670221399175830369/2022.12.04.22.23.19.tar.xz
+2022/12/04 22:23:19 [Encryptor] => Encrypt | openssl
+2022/12/04 22:23:19 [Encryptor] -> /tmp/gobackup619301606/1670221399175830369/2022.12.04.22.23.19.tar.xz.enc
+2022/12/04 22:23:19 [Splitter] Split to chunks
+2022/12/04 22:23:19 [Splitter] Split done
+2022/12/04 22:23:19 [Storage] => Storage | local
+2022/12/04 22:23:19 [Local] Store succeeded /tmp/demo/2022.12.04.22.23.19
+2022/12/04 22:23:19 [Model] Cleanup temp: /tmp/gobackup619301606/
+```
+
+## Backup result
+
+```bash
+$ tree /tmp/demo/2022.12.04.22.23.19
+/tmp/demo/2022.12.04.22.23.19
+├── 2022.12.04.22.23.19.tar.xz.enc-000
+└── 2022.12.04.22.23.19.tar.xz.enc-001
+
+0 directories, 2 files
+```
