@@ -5,7 +5,7 @@ title: Simple tool for backup your databases, files to cloud storages.
 <div class="welcome">
   <img class="logo" src="https://user-images.githubusercontent.com/5518/205909959-12b92929-4ac5-4bb5-9111-6f9a3ed76cf6.png" alt="GoBackup" />
   <h1>GoBackup</h1>
-  <h2>Simple tool for backup your databases, files to cloud storages.</h2>
+  <h2>CLI tool for backup your databases, files to FTP / SCP / S3 / GCS and other cloud storages.</h2>
   <p class="badges">
     <a href="https://github.com/gobackup/gobackup/actions?query=workflow%3AGo"><img src="https://github.com/gobackup/gobackup/workflows/Go/badge.svg" alt="Build Status" /></a>
    <a href="https://github.com/gobackup/gobackup/releases"><img src="https://img.shields.io/github/v/release/gobackup/gobackup?label=Version&color=1" alt="GitHub release (latest by date)"></a>
@@ -15,7 +15,11 @@ title: Simple tool for backup your databases, files to cloud storages.
 
 <pre style="text-align: center">curl -sSL https://gobackup.github.io/install | sh</pre>
 
-GoBackup is a fullstack backup tool design for web servers similar with [backup/backup](https://github.com/backup/backup), work with Crontab to backup automatically.
+GoBackup is a fullstack backup tool design for application servers, to backup your databases, files to cloud storages (Local disk, FTP, SCP, S3, GCS, Aliyun OSS ...).
+
+> Inspired by [backup/backup](https://github.com/backup/backup) and replace it for without Ruby dependency.
+
+[![asciicast](https://asciinema.org/a/543564.svg)](https://asciinema.org/a/543564)
 
 You can write a config file, run `gobackup perform` command by once to dump database as file, archive config files, and then package them into a single file.
 
@@ -33,8 +37,6 @@ GoBackup 是一个类似 [backup/backup](https://github.com/backup/backup) 的�
 - Archive paths or files into a tar.
 - Split large backup file into multiple parts.
 - Run as daemon to backup in schedully.
-
-## Current Support status
 
 ### Databases
 
