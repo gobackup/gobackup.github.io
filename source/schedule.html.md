@@ -75,3 +75,21 @@ $ kill -HUP 20443
 # Exit daemon
 $ kill -QUIT 20443
 ```
+
+## Alternative to use crontab to run backup
+
+You may want run backup in scheduled, you need [Crontab](https://en.wikipedia.org/wiki/Cron):
+
+```shell
+crontab -e
+```
+
+Append this line and save it:
+
+```
+0 0 * * * /usr/local/bin/gobackup perform >> ~/.gobackup/gobackup.log
+```
+
+> `0 0 * * *` means run at 0:00 AM, every day.
+
+And after a day, you can check up the execute status by ~/.gobackup/gobackup.log.
