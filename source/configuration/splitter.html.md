@@ -1,8 +1,8 @@
 ---
-title: Spliter
+title: Splitter
 ---
 
-# Spliter
+# Splitter
 
 > since: 1.3.0
 
