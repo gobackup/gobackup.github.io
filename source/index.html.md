@@ -7,11 +7,9 @@ title: Simple tool for backup your databases, files to cloud storages.
   <h1>GoBackup</h1>
   <h2>Simple tool for backup your databases, files to cloud storages.</h2>
   <p class="badges">
-    <a href="https://github.com/huacnlee/gobackup/releases"><img src="https://img.shields.io/github/v/release/huacnlee/gobackup?label=Version&color=1" alt="GitHub release (latest by date)"></a>
-    <a href="https://travis-ci.org/huacnlee/gobackup"><img src="https://travis-ci.org/huacnlee/gobackup.svg?branch=master" alt="Build Status" /></a>
-
-    <a href="https://github.com/huacnlee/gobackup/blob/master/LICENSE" target="_blank"><img src="/images/mit-badge.svg" /></a>
-
+    <a href="https://github.com/gobackup/gobackup/actions?query=workflow%3AGo"><img src="https://github.com/gobackup/gobackup/workflows/Go/badge.svg" alt="Build Status" /></a>
+   <a href="https://github.com/gobackup/gobackup/releases"><img src="https://img.shields.io/github/v/release/gobackup/gobackup?label=Version&color=1" alt="GitHub release (latest by date)"></a>
+   <a href="https://hub.docker.com/r/huacnlee/gobackup"><img src="https://img.shields.io/docker/v/huacnlee/gobackup?label=Docker&color=blue" alt="Docker Image Version (latest server)"></a>
   </p>
 </div>
 

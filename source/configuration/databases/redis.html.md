@@ -19,5 +19,4 @@ GoBackup use `redis-cli` utility to export MySQL database into a `dump.db` file.
 - `password` - If your Redis server need, default: ``
 - `rdb_path` - `mode: copy` need special this config, default: `/var/lib/redis/dump.rdb`
 
-
-https://github.com/huacnlee/gobackup/blob/master/database/redis.go
+https://github.com/gobackup/gobackup/blob/master/database/redis.go

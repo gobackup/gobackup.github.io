@@ -40,4 +40,4 @@ store_with:
     }
 ```
 
-https://github.com/huacnlee/gobackup/blob/main/storage/gcs.go
+https://github.com/gobackup/gobackup/blob/main/storage/gcs.go

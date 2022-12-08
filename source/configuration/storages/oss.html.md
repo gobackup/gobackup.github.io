@@ -18,4 +18,4 @@ Storage backup file to [Aliyun OSS](https://www.aliyun.com/product/oss).
 - `timeout` - Set timeout of remote upload, default: `300`
 - `max_retries` - Max retries, default: 3
 
-https://github.com/huacnlee/gobackup/blob/master/storages/oss.go
+https://github.com/gobackup/gobackup/blob/master/storages/oss.go

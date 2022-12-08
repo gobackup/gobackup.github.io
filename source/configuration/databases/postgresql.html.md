@@ -16,5 +16,4 @@ GoBackup use `pg_dump` utility to backup PostgreSQL database into a `.sql` file.
 - `username` - default: `root`
 - `password`
 
-
-https://github.com/huacnlee/gobackup/blob/master/database/postgresql.go
+https://github.com/gobackup/gobackup/blob/master/database/postgresql.go

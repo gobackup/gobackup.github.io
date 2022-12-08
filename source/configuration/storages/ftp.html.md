@@ -17,4 +17,4 @@ Storage backup file to remote FTP server.
 - `username` - username
 - `password` - password
 
-https://github.com/huacnlee/gobackup/blob/master/storages/ftp.go
+https://github.com/gobackup/gobackup/blob/master/storages/ftp.go

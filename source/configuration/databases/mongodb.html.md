@@ -18,4 +18,4 @@ GoBackup use `mongodump` utility to backup MongoDB database files.
 - `authdb` - authenticationDatabase arg or `mongodump`
 - `oplog` - oplog arg or `mongodump`, default: `false`
 
-https://github.com/huacnlee/gobackup/blob/master/database/mongodb.go
+https://github.com/gobackup/gobackup/blob/master/database/mongodb.go

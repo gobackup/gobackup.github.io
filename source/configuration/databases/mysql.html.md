@@ -23,5 +23,4 @@ $ sudo apt-get install mysql-client
 - `password`
 - `additional_options` - Additional options for mysqldump utility, for example: `--single-transaction --quick`
 
-
-https://github.com/huacnlee/gobackup/blob/master/database/mysql.go
+https://github.com/gobackup/gobackup/blob/master/database/mysql.go
