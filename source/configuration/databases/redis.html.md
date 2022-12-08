@@ -13,10 +13,25 @@ GoBackup use `redis-cli` utility to export MySQL database into a `dump.db` file.
 - `mode` - Redis dump mode, default: `sync`
   - `sync` - For remote Redis server use sync to export.
   - `copy` - For local Redis server use copy, just copy Redis `dump.db`
-- `host` - MySQL server host, default: `127.0.0.1`
-- `port` - MySQL server port, default: `6379`
+- `host` - Redis server host, if use host, default: `127.0.0.1`
+- `port` - Redis server port, default: `6379`
+- `socket` - Redis server, if use socket, for example: `/var/run/redis/redis.sock`, default: ``
 - `invoke_save` - Invoke save before backup, default: `true`
 - `password` - If your Redis server need, default: ``
 - `rdb_path` - `mode: copy` need special this config, default: `/var/lib/redis/dump.rdb`
 
 https://github.com/gobackup/gobackup/blob/master/database/redis.go
+
+## Configuration Example
+
+```yml
+models:
+  my_app:
+    databases:
+      my_app:
+        type: redis
+        mode: sync
+        rdb_path: /var/db/redis/dump.rdb
+        invoke_save: true
+        password: 123456
+```

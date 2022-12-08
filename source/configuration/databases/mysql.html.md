@@ -18,9 +18,26 @@ $ sudo apt-get install mysql-client
 
 - `host` - MySQL server host, default: `localhost`
 - `port` - MySQL server port, default: `3306`
+- `socket` - MySQL server, if use socket, for example: `/var/run/mysqld/mysqld.sock`, default: ``
 - `database` - database name
 - `username` - default: `root`
 - `password`
 - `additional_options` - Additional options for mysqldump utility, for example: `--single-transaction --quick`
 
 https://github.com/gobackup/gobackup/blob/master/database/mysql.go
+
+## Configuration Example
+
+```yml
+models:
+  my_app:
+    databases:
+      my_app:
+        type: mysql
+        host: localhost
+        port: 3306
+        database: my_app_production
+        username: root
+        password: root
+        additional_options: --single-transaction --quick
+```

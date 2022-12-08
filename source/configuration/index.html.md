@@ -22,14 +22,18 @@ models:
     compress_with:
       # compress type
       type: tgz
+    split_with:
+      # Split backup file into multiple files, each file in 1gb.
+      chunk_size: 1g
     # storage
-    store_with:
-      # storage type
-      type: ftp
-      # other config for this storage type
-      host: ftp.your-host.com
-      username: ...
-      password: ...
+    storages:
+      ftp:
+        # storage type
+        type: ftp
+        # other config for this storage type
+        host: ftp.your-host.com
+        username: ...
+        password: ...
     # database source support multiple instance
     databases:
       # special a database name
@@ -66,11 +70,29 @@ models:
         - /etc/logrotate.d/syslog
   # another model
   my_app2:
+    databases:
+      mysql:
+        type: mysql
+        host: localhost
+        database: my_app_production
+      redis:
+        type: redis
+        host: localhost
+        port: 6379
     compress_with:
       type: tgz
-    store_with:
-      type: local
-      path: /data/backups/my_app2
-    databases:
-      ...
+    storages:
+      local_a:
+        type: local
+        path: /data/backups/my_app2
+      cloud_s3:
+        type: s3
+        keep: 20
+        bucket: your-bucket
+        region: ap-southeast-1
+        path: backups
+        access_key_id: xxxxx
+        secret_access_key: xxxxxxxx
 ```
+
+More example: https://github.com/gobackup/gobackup/blob/main/gobackup_test.yml

@@ -3,3 +3,8 @@ title: Configuration - Databases
 ---
 
 # Configuration - Databases
+
+- [MySQL](/configuration/databases/mysql)
+- [PostgreSQL](/configuration/databases/postgresql)
+- [Redis](/configuration/databases/redis)
+- [MongoDB](/configuration/databases/mongodb)

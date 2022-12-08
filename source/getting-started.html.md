@@ -23,10 +23,11 @@ models:
   my_app:
     compress_with:
       type: tgz
-    store_with:
-      type: local
-      keep: 20
-      path: /data/backups
+    storages:
+      local:
+        type: local
+        keep: 20
+        path: /data/backups
     databases:
       my_app:
         database: my_app_production
@@ -73,4 +74,3 @@ $ gobackup perform
 ```
 $ ls /data/backups/my_app/
 ```
-
