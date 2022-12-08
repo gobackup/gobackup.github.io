@@ -13,24 +13,28 @@ title: Simple tool for backup your databases, files to cloud storages.
   </p>
 </div>
 
+<pre style="text-align: center">curl -sSL https://gobackup.github.io/install | sh</pre>
+
 GoBackup is a fullstack backup tool design for web servers similar with [backup/backup](https://github.com/backup/backup), work with Crontab to backup automatically.
 
 You can write a config file, run `gobackup perform` command by once to dump database as file, archive config files, and then package them into a single file.
 
-It's allow you store the backup file to local, FTP or other cloud storages.
+It's allow you store the backup file to local, FTP, SCP, S3 or other cloud storages.
 
----
-
-GoBackup 是一个类似 backup/backup 的一站式备份工具，为中小型服务器／个人服务器而设计，配合 Crontab 以实现定时备份的目的。
+GoBackup 是一个类似 [backup/backup](https://github.com/backup/backup) 的一站式备份工具，为中小型服务器／个人服务器而设计，配合 Crontab 以实现定时备份的目的。
 
 使用 GoBackup 你可以通过一个简单的配置文件，一次（执行一个命令）将服务器上重要的（数据库、配置文件）东西导出、打包压缩，并备份到指定目的地（如：本地路径、FTP、云存储...）。
 
 ## Features
 
-- No deprecations.
+- No dependencies.
 - Multiple Databases source support.
 - Multiple Storage type support.
 - Archive paths or files into a tar.
+- Split large backup file into multiple parts.
+- Run as daemon to backup in schedully.
+
+## Current Support status
 
 ### Databases
 
@@ -45,23 +49,36 @@ Use `tar` command to archive many file or path into a `.tar` file.
 
 ### Compressor
 
-- Tgz - `.tar.gz`
+| Type                            | Extension   | Parallel Support by |
+| ------------------------------- | ----------- | ------------------- |
+| `gz`, `tgz`, `taz`, `tar.gz`    | `.tar.gz`   | pigz                |
+| `Z`, `taZ`, `tar.Z`             | `.tar.Z`    |                     |
+| `bz2`, `tbz`, `tbz2`, `tar.bz2` | `.tar.bz2`  | pbzip2              |
+| `lz`, `tar.lz`                  | `.tar.lz`   |                     |
+| `lzma`, `tlz`, `tar.lzma`       | `.tar.lzma` |                     |
+| `lzo`, `tar.lzo`                | `.tar.lzo`  |                     |
+| `xz`, `txz`, `tar.xz`           | `.tar.xz`   | pixz                |
+| `zst`, `tzst`, `tar.zst`        | `.tar.zst`  |                     |
+| `tar`                           | `.tar`      |                     |
+| default                         | `.tar`      |                     |
 
 ### Encryptor
 
-- OpenSSL
+- OpenSSL - `aes-256-cbc` encrypt
 
 ### Storages
 
-- Local
-- FTP
-- SCP - Upload via SSH copy
-- [Amazon S3](/configuration/storages/s3/)
-- [Aliyun OSS](/configuration/storages/oss)
-- [Google Cloud Storage](/configuration/storages/gcs)
-- [Backblaze B2 Cloud Storage](/configuration/storages/b2)
-- [Cloudflare R2](/configuration/storages/r2)
-- [DigitalOcean Spaces](/configuration/storages/spaces)
-- [QCloud COS](/configuration/storages/cos)
-- [UCloud US3](/configuration/storages/us3)
-- [Qiniu Kodo](/configuration/storages/kodo)
+<ul>
+  <li><a href="/configuration/storages/local">Local</a></li>
+  <li><a href="/configuration/storages/ftp">FTP</a></li>
+  <li><a href="/configuration/storages/scp">SCP</a></li>
+  <li><a href="/configuration/storages/s3">AWS S3</a></li>
+  <li><a href="/configuration/storages/oss">Aliyun OSS</a></li>
+  <li><a href="/configuration/storages/gcs">Google Cloud Storage</a></li>
+  <li><a href="/configuration/storages/r2">Cloudflare R2</a></li>
+  <li><a href="/configuration/storages/spaces">DigitalOcean Spaces</a></li>
+  <li><a href="/configuration/storages/b2">Backblaze B2</a></li>
+  <li><a href="/configuration/storages/cos">QCloud COS</a></li>
+  <li><a href="/configuration/storages/us3">UCloud US3</a></li>
+  <li><a href="/configuration/storages/kodo">Qiniu Kodo</a></li>
+</ul>
