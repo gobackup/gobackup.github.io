@@ -3,7 +3,7 @@ title: Simple tool for backup your databases, files to cloud storages.
 ---
 
 <div class="welcome">
-  <img class="logo" src="/images/gobackup.svg" alt="GoBackup" />
+  <img class="logo" src="https://user-images.githubusercontent.com/5518/205909959-12b92929-4ac5-4bb5-9111-6f9a3ed76cf6.png" alt="GoBackup" />
   <h1>GoBackup</h1>
   <h2>Simple tool for backup your databases, files to cloud storages.</h2>
   <p class="badges">
