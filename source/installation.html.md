@@ -16,6 +16,12 @@ curl -sSL https://gobackup.github.io/install | sh
 
 After that, GoBackup has installed to `/usr/local/bin/gobackup`, you can run `gobackup` command in every where.
 
+### Install via Homebrew
+
+```shell
+brew install gobackup
+```
+
 ```bash
 $ gobackup -v
 GoBackup 1.3.0

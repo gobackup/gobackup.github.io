@@ -15,6 +15,10 @@ title: Simple tool for backup your databases, files to cloud storages.
 
 <pre style="text-align: center">curl -sSL https://gobackup.github.io/install | sh</pre>
 
+Or install via Homebrew
+
+<pre style="text-align: center">brew install gobackup</pre>
+
 GoBackup is a fullstack backup tool design for application servers, to backup your databases, files to cloud storages (Local disk, FTP, SCP, S3, GCS, Aliyun OSS ...).
 
 > Inspired by [backup/backup](https://github.com/backup/backup) and replace it for without Ruby dependency.
