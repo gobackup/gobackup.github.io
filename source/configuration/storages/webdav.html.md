@@ -17,4 +17,4 @@ Storage backup file to [WebDAV](http://www.webdav.org).
 - `username` - username
 - `password` - password
 
-https://github.com/gobackup/gobackup/blob/master/storages/webdav.go
+https://github.com/gobackup/gobackup/blob/main/storages/webdav.go

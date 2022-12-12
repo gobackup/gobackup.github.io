@@ -12,4 +12,4 @@ Storage backup file in local path.
 
 - `path` - path you need store backup files.
 
-https://github.com/gobackup/gobackup/blob/master/storages/local.go
+https://github.com/gobackup/gobackup/blob/main/storages/local.go

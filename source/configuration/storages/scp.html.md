@@ -18,4 +18,4 @@ Storage backup file to remote SSH server, like `scp` command.
 - `username` - SSH username
 - `password` - SSH password
 
-https://github.com/gobackup/gobackup/blob/master/storages/scp.go
+https://github.com/gobackup/gobackup/blob/main/storages/scp.go
