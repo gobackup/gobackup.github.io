@@ -48,6 +48,7 @@ GoBackup 是一个类似 [backup/backup](https://github.com/backup/backup) 的�
 - PostgreSQL
 - Redis - `mode: sync/copy`
 - MongoDB
+- SQLite
 
 ### Archive
 
@@ -77,6 +78,7 @@ Use `tar` command to archive many file or path into a `.tar` file.
 <ul>
   <li><a href="/configuration/storages/local">Local</a></li>
   <li><a href="/configuration/storages/ftp">FTP</a></li>
+  <li><a href="/configuration/storages/sftp">SFTP</a></li>
   <li><a href="/configuration/storages/scp">SCP</a></li>
   <li><a href="/configuration/storages/s3">AWS S3</a></li>
   <li><a href="/configuration/storages/oss">Aliyun OSS</a></li>
