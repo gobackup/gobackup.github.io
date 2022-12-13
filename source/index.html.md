@@ -89,4 +89,9 @@ Use `tar` command to archive many file or path into a `.tar` file.
   <li><a href="/configuration/storages/cos">QCloud COS</a></li>
   <li><a href="/configuration/storages/us3">UCloud US3</a></li>
   <li><a href="/configuration/storages/kodo">Qiniu Kodo</a></li>
+  <li><a href="/configuration/storages/bos">Baidu BOS</a></li>
 </ul>
+
+### Notifier
+
+GoBackup Notifiers for send notifications to your, when the backup has been successfully or failed.
