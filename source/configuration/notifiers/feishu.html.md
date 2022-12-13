@@ -1,0 +1,25 @@
+---
+title: Feishu - Notifier
+---
+
+# Feishu (飞书) - Notifier
+
+[Feishu](https://www.feishu.cn) is a team communication tool.
+
+We can send Feishu message by use Webhooks, you can follow the [Feishu Incoming Webhooks Guide](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN) to get the webhook `url`.
+
+## Configuration
+
+```yml
+models:
+  my_app:
+    storages:
+      local:
+        type: local
+        keep: 10
+    notifiers:
+      feishu:
+        type: feishu
+        url: https://open.feishu.cn/open-apis/bot/v2/hook/xxxxxxxxxxxxxxxxx
+        on_success: false
+```
