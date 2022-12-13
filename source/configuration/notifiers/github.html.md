@@ -4,6 +4,8 @@ title: GitHub Issue Comment - Notifier
 
 # GitHub Issue Comment - Notifier
 
+> since: 1.5.0
+
 This notifier send notification by create comment to a GitHub Issue or Pull Request. Then you can subscribe the issue or pull request to get the notification.
 
 ## Get GitHub Access Token

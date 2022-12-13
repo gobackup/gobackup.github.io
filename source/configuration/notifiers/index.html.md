@@ -2,6 +2,8 @@
 title: Notifiers
 ---
 
+> since: 1.5.0
+
 # Notifiers
 
 GoBackup Notifiers for send notifications to your, when the backup has been successfully or failed.

@@ -4,6 +4,8 @@ title: DingTalk - Notifier
 
 # DingTalk (钉钉) - Notifier
 
+> since: 1.5.0
+
 [DingTalk](https://www.dingtalk.com) is a team communication tool.
 
 We can send DingTalk message by use [Webhook API](https://open.dingtalk.com/document/group/custom-robot-access), you can follow the [DingTalk Webhook Guide](https://open.dingtalk.com/document/group/custom-robot-access) to get the webhook `url`.

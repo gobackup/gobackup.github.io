@@ -4,6 +4,8 @@ title: Discord - Notifier
 
 # Discord - Notifier
 
+> since: 1.5.0
+
 [Discord](https://discordapp.com) is a free voice, video and text chat app for gamers.
 
 We can send Discord message by use [Webhook API](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks), you can follow the [Discord Webhook Guide](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) to get the webhook `url`.

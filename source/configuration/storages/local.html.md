@@ -13,3 +13,14 @@ Storage backup file in local path.
 - `path` - path you need store backup files.
 
 https://github.com/gobackup/gobackup/blob/main/storages/local.go
+
+## For example
+
+```yml
+models:
+  my_backup:
+    storages:
+      local:
+        type: local
+        path: /data/my-backups
+```

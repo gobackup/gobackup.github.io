@@ -4,13 +4,28 @@ title: Storage
 
 # Storages
 
-GoBackup includes the following Storages:
+GoBackup built-in multiple storages, you can use one or more storages to store backup file.
 
-- [Local](local)
-- [FTP](ftp)
-- [SCP](scp)
-- [AWS S3](s3)
-- [Aliyun OSS](oss)
+Use `storages` config to set storages.
+
+For example:
+
+```yml
+models:
+  my_app:
+    storages:
+      local_disk:
+        type: local
+        path: /data/backups
+      s3:
+        type: s3
+        bucket: my-bucket
+        region: us-east-1
+        access_key_id: xxx
+        secret_access_key: xxx
+```
+
+When you setup multiple storages, GoBackup will upload backup file to all storages.
 
 ## Cycling Stored Backups
 
@@ -21,13 +36,15 @@ For example:
 ```yml
 models:
   my_app:
-    store_with:
-      type: local
-      keep: 10
+    storages:
+      local_disk:
+        type: local
+        keep: 10
+        path: /data/backups
 ```
 
 **`keep` as a Number**
 
-If `keep` have specified and once the `keep` limit  has been reached, the older backup files will be removed.
+If `keep` have specified and once the `keep` limit has been reached, the older backup files will be removed.
 
 GoBackup will save the backup histories in `~/.gobackup/cycler.json`.

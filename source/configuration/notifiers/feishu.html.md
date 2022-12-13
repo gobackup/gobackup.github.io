@@ -4,6 +4,8 @@ title: Feishu - Notifier
 
 # Feishu (飞书) - Notifier
 
+> since: 1.5.0
+
 [Feishu](https://www.feishu.cn) is a team communication tool.
 
 We can send Feishu message by use Webhooks, you can follow the [Feishu Incoming Webhooks Guide](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN) to get the webhook `url`.

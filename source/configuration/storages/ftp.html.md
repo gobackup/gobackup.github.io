@@ -18,3 +18,18 @@ Storage backup file to remote FTP server.
 - `password` - password
 
 https://github.com/gobackup/gobackup/blob/main/storages/ftp.go
+
+## For example
+
+```yml
+models:
+  my_backup:
+    storages:
+      ftp:
+        type: ftp
+        host: ftp.example.com
+        port: 21
+        path: /data/my-backups
+        username: user
+        password: password
+```

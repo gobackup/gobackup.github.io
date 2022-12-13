@@ -4,6 +4,8 @@ title: Slack - Notifier
 
 # Slack - Notifier
 
+> since: 1.5.0
+
 [Slack](https://slack.com) is a team communication tool.
 
 We can send Slack message by use [Incoming Webhooks](https://api.slack.com/messaging/webhooks), you can follow the [Slack Incoming Webhooks Guide](https://api.slack.com/messaging/webhooks) to get the webhook `url`.

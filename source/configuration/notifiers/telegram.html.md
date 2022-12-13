@@ -4,6 +4,8 @@ title: Telegram - Notifier
 
 # Telegram - Notifier
 
+> since: 1.5.0
+
 [Telegram](https://telegram.org) is a team communication tool.
 
 We can send Telegram message by use [Telegram Bot API](https://core.telegram.org/bots/api#sendmessage), you can follow the [Telegram Bot Guide](https://core.telegram.org/bots#6-botfather) to get the bot `token`.
