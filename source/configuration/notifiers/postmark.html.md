@@ -22,8 +22,8 @@ models:
     notifiers:
       postmark:
         type: postmark
-        from: sender-name@your-host.com
-        to: your-email@xxx.com
+        from: from@example.com
+        to: to@example.com
         token: xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
         on_success: false
 ```

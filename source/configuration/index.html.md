@@ -96,3 +96,41 @@ models:
 ```
 
 More example: https://github.com/gobackup/gobackup/blob/main/gobackup_test.yml
+
+## With ENV variables
+
+> since: 1.6.0
+
+GoBackup has supports use ENV variables in config, for keep secrets info more secure.
+
+Use `$ENV_KEY` or `${ENV_KEY}` to get ENV variables.
+
+For example:
+
+```yml
+models:
+  example:
+    databases:
+      postgresql:
+        type: postgresql
+        database: demo
+        username: $POSTGRESQL_USERNAME
+        password: $POSTGRESQL_PASSWORD
+    storages:
+      s3:
+        type: s3
+        bucket: gobackup-test
+        region: ap-southeast-1
+        path: backups
+        access_key_id: $AWS_ACCESS_KEY_ID
+        secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+```
+
+Now you can set ENV in you bash or in `.env` file.
+
+```conf
+POSTGRESQL_USERNAME=postgres
+POSTGRESQL_PASSWORD=this-is-my-password
+AWS_ACCESS_KEY_ID=xxxxxx
+AWS_SECRET_ACCESS_KEY=xxxxxxxxxxx
+```
