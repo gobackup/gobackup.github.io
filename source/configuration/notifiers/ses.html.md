@@ -1,0 +1,39 @@
+---
+title: AWS SES - Notifier
+---
+
+# AWS SES - Notifier
+
+> since: 1.6.0
+
+[AWS SES](https://aws.amazon.com/ses/) is a transactional email service.
+
+We can send AWS SES message by use [AWS SES API](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html), you can follow the [AWS SES API Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html) to get the **Access Key ID** and **Secret Access Key**.
+
+## Configuration
+
+- `type: ses`
+- `from` - Sender email address
+- `to` - Receiver email address
+- `region` - AWS region, default: `us-east-1`
+- `access_key_id` - AWS Access Key ID
+- `secret_access_key` - AWS Secret Access Key
+- `on_success` - Send email when backup success, default: `true`
+- `on_failure` - Send email when backup warning, default: `true`
+
+```yml
+models:
+  my_app:
+    storages:
+      local:
+        type: local
+        keep: 10
+    notifiers:
+      ses:
+        type: ses
+        from: from@example.com
+        to: to@example.com
+        access_key_id: xxxxxxxx
+        secret_access_key: xxxxxxxx
+        region: us-east-1
+```
