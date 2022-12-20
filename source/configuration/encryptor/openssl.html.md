@@ -6,6 +6,17 @@ title: Encrypt with OpenSSL
 
 Create a password-protected backup file with `my_password` as the password.
 
+## Configuation
+
+- `type: openssl`
+- `chiper` - The cipher to use, default: `aes-256-cbc`.
+- `password` - Set password to encrypt the backup file, required.
+- `salt` - Use a salt in the key derivation routines, default: `true`
+- `base64` - Whether to encode the encrypted file with base64, default: `false`
+- `args` - Additional arguments to pass to the openssl command.
+
+For example
+
 ```yml
 encrypt_with:
   type: openssl
