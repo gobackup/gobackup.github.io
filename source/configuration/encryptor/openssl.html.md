@@ -40,3 +40,11 @@ $ openssl aes-256-cbc -d -base64 -in my_backup.tar.gz.enc -out my_backup.tar.gz
 `-base64` is only required if you used `base64: true`.
 
 You will be prompted for your password.
+
+## QA
+
+- If you are encrypt on OpenSSL 1.x and Decrypt on OpenSSL 3.x, you will need to use the `-md md5` fla, [read details](https://stackoverflow.com/questions/39637388/encryption-decryption-doesnt-work-well-between-two-different-openssl-versions).
+
+  ```bash
+  $ openssl aes-256-cbc -d -md md5 -in my_backup.tar.gz.enc -out my_backup.tar.gz
+  ```
