@@ -20,7 +20,7 @@ jobs:
         run: bundle install
       - name: Build
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email github-actions@github.com
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git config --global user.name "GitHub Actions"
+          git config --global user.email github-actions@github.com
           bundle exec rake publish
