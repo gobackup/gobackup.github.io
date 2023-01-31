@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="https://user-images.githubusercontent.com/5518/205909959-12b92929-4ac5-4bb5-9111-6f9a3ed76cf6.png">
+    <title>GoBackup - Getting Started</title>
+    <meta name="description" content="GoBackup is a simple tool for backup your databases, files to cloud storages.">
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <script src="/javascripts/site.js"></script>
+  </head>
+  <body class="main">
+    <header>
+      <h1>
+        <a href="/" class="logo"><img alt="GoBackup" src="https://user-images.githubusercontent.com/5518/205909959-12b92929-4ac5-4bb5-9111-6f9a3ed76cf6.png" /></a>
+        <a href="/">GoBackup</a>
+      </h1>
+      <ul>
+        <li><a href="/installation">Installation</a></li>
+        <li><a href="/release-notes">Release Notes</a></li>
+        <li><a href="/getting-started">Getting Started</a></li>
+        <li><a href="/schedule">Backup Schedule</a></li>
+      </ul>
+      <ul>
+        <li>
+          <a href="/configuration">Configuration</a>
+          <ul>
+            <li>
+              <span>Databases</span>
+              <ul>
+                <li><a href="/configuration/databases/mysql">MySQL</a></li>
+                <li><a href="/configuration/databases/postgresql">PostgreSQL</a></li>
+                <li><a href="/configuration/databases/mongodb">MongoDB</a></li>
+                <li><a href="/configuration/databases/redis">Redis</a></li>
+                <li><a href="/configuration/databases/sqlite">SQLite</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/configuration/archive">Archive</a>
+            </li>
+
+            <li>
+              <span>Compressor</span>
+              <ul>
+                <li><a href="/configuration/compressor/tar">Tar</a></a>
+              </ul>
+            </li>
+
+            <li>
+              <span>Encryptor</span>
+              <ul>
+                <li><a href="/configuration/encryptor/openssl">OpenSSL</a></a>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/configuration/splitter">Splitter</a>
+            </li>
+
+            <li>
+              <a href="/configuration/storages">Storages</a>
+              <ul>
+                <li><a href="/configuration/storages/local">Local</a></li>
+                <li><a href="/configuration/storages/ftp">FTP</a></li>
+                <li><a href="/configuration/storages/sftp">SFTP</a></li>
+                <li><a href="/configuration/storages/scp">SCP</a></li>
+                <li><a href="/configuration/storages/webdav">WebDAV</a></li>
+                <li><a href="/configuration/storages/s3">AWS S3</a></li>
+                <li><a href="/configuration/storages/oss">Aliyun OSS</a></li>
+                <li><a href="/configuration/storages/gcs">Google Cloud Storage</a></li>
+                <li><a href="/configuration/storages/azure">Azure Blob Storage</a></li>
+                <li><a href="/configuration/storages/r2">Cloudflare R2</a></li>
+                <li><a href="/configuration/storages/spaces">DigitalOcean Spaces</a></li>
+                <li><a href="/configuration/storages/b2">Backblaze B2</a></li>
+                <li><a href="/configuration/storages/cos">QCloud COS</a></li>
+                <li><a href="/configuration/storages/us3">UCloud US3</a></li>
+                <li><a href="/configuration/storages/kodo">Qiniu Kodo</a></li>
+                <li><a href="/configuration/storages/bos">Baidu BOS</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/configuration/notifiers">Notifiers</a>
+              <ul>
+                <li><a href="/configuration/notifiers/mail">Mail</a></li>
+                <li><a href="/configuration/notifiers/webhook">Webhook</a></li>
+                <li><a href="/configuration/notifiers/discord">Discord</a></li>
+                <li><a href="/configuration/notifiers/slack">Slack</a></li>
+                <li><a href="/configuration/notifiers/telegram">Telegram</a></li>
+                <li><a href="/configuration/notifiers/github">GitHub</a></li>
+                <li><a href="/configuration/notifiers/dingtalk">DingTalk</a></li>
+                <li><a href="/configuration/notifiers/feishu">Feishu</a></li>
+                <li><a href="/configuration/notifiers/ses">AWS SES</a></li>
+                <li><a href="/configuration/notifiers/postmark">Postmark</a></li>
+                <li><a href="/configuration/notifiers/sendgrid">SendGrid</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="https://github.com/gobackup/gobackup" target="_blank">GitHub</a>
+        </li>
+        <li><a href="https://github.com/gobackup/gobackup/releases"><img src="https://img.shields.io/github/v/release/gobackup/gobackup?label=Version&color=1" alt="GitHub release (latest by date)"></a></li>
+      </ul>
+
+    </header>
+    <div class="content">
+      <h1>Getting Started</h1>
+
+<p>The following is a simple walk-through to familiarize you with how GoBackup works.</p>
+
+<p>If you have not yet installed GoBackup, see the <a href="/installation">Installation</a> page.</p>
+
+<h2>Generating config file</h2>
+<div class="highlight"><pre class="highlight shell"><code><span class="nv">$ </span><span class="nb">touch</span> ~/.gobackup/gobackup.yml
+</code></pre></div>
+<blockquote>
+<p>NOTE: Or put config file in there: <code>/etc/gobackup/gobackup.yml</code></p>
+</blockquote>
+
+<p>And then edit the config file like this:</p>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">models</span><span class="pi">:</span>
+  <span class="na">my_app</span><span class="pi">:</span>
+    <span class="na">compress_with</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">tgz</span>
+    <span class="na">storages</span><span class="pi">:</span>
+      <span class="na">local</span><span class="pi">:</span>
+        <span class="na">type</span><span class="pi">:</span> <span class="s">local</span>
+        <span class="na">keep</span><span class="pi">:</span> <span class="m">20</span>
+        <span class="na">path</span><span class="pi">:</span> <span class="s">/data/backups</span>
+    <span class="na">databases</span><span class="pi">:</span>
+      <span class="na">my_app</span><span class="pi">:</span>
+        <span class="na">database</span><span class="pi">:</span> <span class="s">my_app_production</span>
+        <span class="na">type</span><span class="pi">:</span> <span class="s">mysql</span>
+        <span class="na">host</span><span class="pi">:</span> <span class="s">localhost</span>
+        <span class="na">port</span><span class="pi">:</span> <span class="m">3306</span>
+        <span class="na">username</span><span class="pi">:</span> <span class="s">root</span>
+    <span class="na">archive</span><span class="pi">:</span>
+      <span class="na">includes</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">/var/www/my_app/uploads</span>
+        <span class="pi">-</span> <span class="s">/var/www/my_app/shared/ssl</span>
+</code></pre></div>
+<h2>Run backup</h2>
+<div class="highlight"><pre class="highlight shell"><code><span class="nv">$ </span>gobackup perform
+</code></pre></div><div class="highlight"><pre class="highlight plaintext"><code>2017/09/08 06:47:36 ======== my_app ========
+2017/09/08 06:47:36 WorkDir: /tmp/gobackup/1504853256396379166
+
+2017/09/08 06:47:36 ------------- Databases --------------
+2017/09/08 06:47:36 =&gt; database | MySQL: my_app
+2017/09/08 06:47:36 Dump mysql dump to /tmp/gobackup/1504853256396379166/mysql/my_app/my_app_production.sql
+2017/09/08 06:47:36 ----------- End databases ------------
+
+2017/09/08 06:47:36 ------------- Compressor --------------
+2017/09/08 06:47:36 =&gt; Compress with Tgz...
+2017/09/08 06:47:39 -&gt; /tmp/gobackup/2017.09.08.06.47.39.tar.gz
+2017/09/08 06:47:39 ----------- End Compressor ------------
+
+2017/09/08 06:47:39 =&gt; storage | Local
+2017/09/08 06:47:39 -&gt; Copying...
+2017/09/08 06:47:39 -&gt; /data/backups/my_app/2017.09.08.06.47.39.tar.gz
+
+2017/09/08 06:48:04 Cleanup temp dir...
+2017/09/08 06:48:04 ======= End my_app =======
+</code></pre></div>
+<h2>Check your backup files</h2>
+<div class="highlight"><pre class="highlight plaintext"><code>$ ls /data/backups/my_app/
+</code></pre></div>
+    </div>
+  </body>
+</html>

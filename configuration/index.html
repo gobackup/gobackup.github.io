@@ -1,0 +1,243 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="https://user-images.githubusercontent.com/5518/205909959-12b92929-4ac5-4bb5-9111-6f9a3ed76cf6.png">
+    <title>GoBackup - Configuration</title>
+    <meta name="description" content="GoBackup is a simple tool for backup your databases, files to cloud storages.">
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <script src="/javascripts/site.js"></script>
+  </head>
+  <body class="main">
+    <header>
+      <h1>
+        <a href="/" class="logo"><img alt="GoBackup" src="https://user-images.githubusercontent.com/5518/205909959-12b92929-4ac5-4bb5-9111-6f9a3ed76cf6.png" /></a>
+        <a href="/">GoBackup</a>
+      </h1>
+      <ul>
+        <li><a href="/installation">Installation</a></li>
+        <li><a href="/release-notes">Release Notes</a></li>
+        <li><a href="/getting-started">Getting Started</a></li>
+        <li><a href="/schedule">Backup Schedule</a></li>
+      </ul>
+      <ul>
+        <li>
+          <a href="/configuration">Configuration</a>
+          <ul>
+            <li>
+              <span>Databases</span>
+              <ul>
+                <li><a href="/configuration/databases/mysql">MySQL</a></li>
+                <li><a href="/configuration/databases/postgresql">PostgreSQL</a></li>
+                <li><a href="/configuration/databases/mongodb">MongoDB</a></li>
+                <li><a href="/configuration/databases/redis">Redis</a></li>
+                <li><a href="/configuration/databases/sqlite">SQLite</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/configuration/archive">Archive</a>
+            </li>
+
+            <li>
+              <span>Compressor</span>
+              <ul>
+                <li><a href="/configuration/compressor/tar">Tar</a></a>
+              </ul>
+            </li>
+
+            <li>
+              <span>Encryptor</span>
+              <ul>
+                <li><a href="/configuration/encryptor/openssl">OpenSSL</a></a>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/configuration/splitter">Splitter</a>
+            </li>
+
+            <li>
+              <a href="/configuration/storages">Storages</a>
+              <ul>
+                <li><a href="/configuration/storages/local">Local</a></li>
+                <li><a href="/configuration/storages/ftp">FTP</a></li>
+                <li><a href="/configuration/storages/sftp">SFTP</a></li>
+                <li><a href="/configuration/storages/scp">SCP</a></li>
+                <li><a href="/configuration/storages/webdav">WebDAV</a></li>
+                <li><a href="/configuration/storages/s3">AWS S3</a></li>
+                <li><a href="/configuration/storages/oss">Aliyun OSS</a></li>
+                <li><a href="/configuration/storages/gcs">Google Cloud Storage</a></li>
+                <li><a href="/configuration/storages/azure">Azure Blob Storage</a></li>
+                <li><a href="/configuration/storages/r2">Cloudflare R2</a></li>
+                <li><a href="/configuration/storages/spaces">DigitalOcean Spaces</a></li>
+                <li><a href="/configuration/storages/b2">Backblaze B2</a></li>
+                <li><a href="/configuration/storages/cos">QCloud COS</a></li>
+                <li><a href="/configuration/storages/us3">UCloud US3</a></li>
+                <li><a href="/configuration/storages/kodo">Qiniu Kodo</a></li>
+                <li><a href="/configuration/storages/bos">Baidu BOS</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/configuration/notifiers">Notifiers</a>
+              <ul>
+                <li><a href="/configuration/notifiers/mail">Mail</a></li>
+                <li><a href="/configuration/notifiers/webhook">Webhook</a></li>
+                <li><a href="/configuration/notifiers/discord">Discord</a></li>
+                <li><a href="/configuration/notifiers/slack">Slack</a></li>
+                <li><a href="/configuration/notifiers/telegram">Telegram</a></li>
+                <li><a href="/configuration/notifiers/github">GitHub</a></li>
+                <li><a href="/configuration/notifiers/dingtalk">DingTalk</a></li>
+                <li><a href="/configuration/notifiers/feishu">Feishu</a></li>
+                <li><a href="/configuration/notifiers/ses">AWS SES</a></li>
+                <li><a href="/configuration/notifiers/postmark">Postmark</a></li>
+                <li><a href="/configuration/notifiers/sendgrid">SendGrid</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="https://github.com/gobackup/gobackup" target="_blank">GitHub</a>
+        </li>
+        <li><a href="https://github.com/gobackup/gobackup/releases"><img src="https://img.shields.io/github/v/release/gobackup/gobackup?label=Version&color=1" alt="GitHub release (latest by date)"></a></li>
+      </ul>
+
+    </header>
+    <div class="content">
+      <h1>Configuration</h1>
+
+<p>GoBackup will read config from following paths:</p>
+
+<ul>
+<li><code>~/.gobackup/gobackup.yml</code></li>
+<li><code>/etc/gobackup.yml</code></li>
+</ul>
+
+<p>You must use <a href="http://yaml.org/">YAML</a> format.</p>
+
+<h2>Full config struct</h2>
+<div class="highlight"><pre class="highlight yaml"><code><span class="c1"># root</span>
+<span class="na">models</span><span class="pi">:</span>
+  <span class="c1"># special a model name</span>
+  <span class="na">model_name1</span><span class="pi">:</span>
+    <span class="c1"># config compress</span>
+    <span class="na">compress_with</span><span class="pi">:</span>
+      <span class="c1"># compress type</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">tgz</span>
+    <span class="na">split_with</span><span class="pi">:</span>
+      <span class="c1"># Split backup file into multiple files, each file in 1gb.</span>
+      <span class="na">chunk_size</span><span class="pi">:</span> <span class="s">1g</span>
+    <span class="c1"># storage</span>
+    <span class="na">storages</span><span class="pi">:</span>
+      <span class="na">ftp</span><span class="pi">:</span>
+        <span class="c1"># storage type</span>
+        <span class="na">type</span><span class="pi">:</span> <span class="s">ftp</span>
+        <span class="c1"># other config for this storage type</span>
+        <span class="na">host</span><span class="pi">:</span> <span class="s">ftp.your-host.com</span>
+        <span class="na">username</span><span class="pi">:</span> <span class="s">...</span>
+        <span class="na">password</span><span class="pi">:</span> <span class="s">...</span>
+    <span class="c1"># database source support multiple instance</span>
+    <span class="na">databases</span><span class="pi">:</span>
+      <span class="c1"># special a database name</span>
+      <span class="na">my_app1</span><span class="pi">:</span>
+        <span class="c1"># database type</span>
+        <span class="na">type</span><span class="pi">:</span> <span class="s">mysql</span>
+        <span class="c1"># other config for this database type</span>
+        <span class="na">host</span><span class="pi">:</span> <span class="s">localhost</span>
+        <span class="na">database</span><span class="pi">:</span> <span class="s">my_app_production</span>
+        <span class="na">username</span><span class="pi">:</span> <span class="s">root</span>
+      <span class="na">my_app_redis1</span><span class="pi">:</span>
+        <span class="na">type</span><span class="pi">:</span> <span class="s">redis</span>
+        <span class="na">host</span><span class="pi">:</span> <span class="s">localhost</span>
+        <span class="na">port</span><span class="pi">:</span> <span class="m">6379</span>
+        <span class="na">mode</span><span class="pi">:</span> <span class="s">sync</span>
+      <span class="na">my_app_redis2</span><span class="pi">:</span>
+        <span class="na">type</span><span class="pi">:</span> <span class="s">redis</span>
+        <span class="na">host</span><span class="pi">:</span> <span class="s">localhost</span>
+        <span class="na">port</span><span class="pi">:</span> <span class="m">6380</span>
+        <span class="na">mode</span><span class="pi">:</span> <span class="s">sync</span>
+    <span class="c1"># archive config</span>
+    <span class="na">archive</span><span class="pi">:</span>
+      <span class="c1"># archive multiple files / directoies</span>
+      <span class="na">includes</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">/home/git/.ssh/</span>
+        <span class="pi">-</span> <span class="s">/etc/mysql/my.conf</span>
+        <span class="pi">-</span> <span class="s">/etc/nginx/nginx.conf</span>
+        <span class="pi">-</span> <span class="s">/etc/nginx/conf.d</span>
+        <span class="pi">-</span> <span class="s">/etc/redis/redis.conf</span>
+        <span class="pi">-</span> <span class="s">/etc/logrotate.d/</span>
+      <span class="c1"># path will exclude</span>
+      <span class="na">excludes</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">/home/ubuntu/.ssh/known_hosts</span>
+        <span class="pi">-</span> <span class="s">/etc/logrotate.d/syslog</span>
+  <span class="c1"># another model</span>
+  <span class="na">my_app2</span><span class="pi">:</span>
+    <span class="na">databases</span><span class="pi">:</span>
+      <span class="na">mysql</span><span class="pi">:</span>
+        <span class="na">type</span><span class="pi">:</span> <span class="s">mysql</span>
+        <span class="na">host</span><span class="pi">:</span> <span class="s">localhost</span>
+        <span class="na">database</span><span class="pi">:</span> <span class="s">my_app_production</span>
+      <span class="na">redis</span><span class="pi">:</span>
+        <span class="na">type</span><span class="pi">:</span> <span class="s">redis</span>
+        <span class="na">host</span><span class="pi">:</span> <span class="s">localhost</span>
+        <span class="na">port</span><span class="pi">:</span> <span class="m">6379</span>
+    <span class="na">compress_with</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">tgz</span>
+    <span class="na">storages</span><span class="pi">:</span>
+      <span class="na">local_a</span><span class="pi">:</span>
+        <span class="na">type</span><span class="pi">:</span> <span class="s">local</span>
+        <span class="na">path</span><span class="pi">:</span> <span class="s">/data/backups/my_app2</span>
+      <span class="na">cloud_s3</span><span class="pi">:</span>
+        <span class="na">type</span><span class="pi">:</span> <span class="s">s3</span>
+        <span class="na">keep</span><span class="pi">:</span> <span class="m">20</span>
+        <span class="na">bucket</span><span class="pi">:</span> <span class="s">your-bucket</span>
+        <span class="na">region</span><span class="pi">:</span> <span class="s">ap-southeast-1</span>
+        <span class="na">path</span><span class="pi">:</span> <span class="s">backups</span>
+        <span class="na">access_key_id</span><span class="pi">:</span> <span class="s">xxxxx</span>
+        <span class="na">secret_access_key</span><span class="pi">:</span> <span class="s">xxxxxxxx</span>
+</code></pre></div>
+<p>More example: <a href="https://github.com/gobackup/gobackup/blob/main/gobackup_test.yml">https://github.com/gobackup/gobackup/blob/main/gobackup_test.yml</a></p>
+
+<h2>With ENV variables</h2>
+
+<blockquote>
+<p>since: 1.6.0</p>
+</blockquote>
+
+<p>GoBackup supports to use ENV variables in config, to keep secrets info more secure.</p>
+
+<p>Use <code>$ENV_KEY</code> or <code>${ENV_KEY}</code> to get ENV variables.</p>
+
+<p>For example:</p>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">models</span><span class="pi">:</span>
+  <span class="na">example</span><span class="pi">:</span>
+    <span class="na">databases</span><span class="pi">:</span>
+      <span class="na">postgresql</span><span class="pi">:</span>
+        <span class="na">type</span><span class="pi">:</span> <span class="s">postgresql</span>
+        <span class="na">database</span><span class="pi">:</span> <span class="s">demo</span>
+        <span class="na">username</span><span class="pi">:</span> <span class="s">$POSTGRESQL_USERNAME</span>
+        <span class="na">password</span><span class="pi">:</span> <span class="s">$POSTGRESQL_PASSWORD</span>
+    <span class="na">storages</span><span class="pi">:</span>
+      <span class="na">s3</span><span class="pi">:</span>
+        <span class="na">type</span><span class="pi">:</span> <span class="s">s3</span>
+        <span class="na">bucket</span><span class="pi">:</span> <span class="s">gobackup-test</span>
+        <span class="na">region</span><span class="pi">:</span> <span class="s">ap-southeast-1</span>
+        <span class="na">path</span><span class="pi">:</span> <span class="s">backups</span>
+        <span class="na">access_key_id</span><span class="pi">:</span> <span class="s">$AWS_ACCESS_KEY_ID</span>
+        <span class="na">secret_access_key</span><span class="pi">:</span> <span class="s">${AWS_SECRET_ACCESS_KEY}</span>
+</code></pre></div>
+<p>Now you can set ENV in your bash or in <code>.env</code> file.</p>
+<div class="highlight"><pre class="highlight conf"><code><span class="n">POSTGRESQL_USERNAME</span>=<span class="n">postgres</span>
+<span class="n">POSTGRESQL_PASSWORD</span>=<span class="n">this</span>-<span class="n">is</span>-<span class="n">my</span>-<span class="n">password</span>
+<span class="n">AWS_ACCESS_KEY_ID</span>=<span class="n">xxxxxx</span>
+<span class="n">AWS_SECRET_ACCESS_KEY</span>=<span class="n">xxxxxxxxxxx</span>
+</code></pre></div>
+    </div>
+  </body>
+</html>

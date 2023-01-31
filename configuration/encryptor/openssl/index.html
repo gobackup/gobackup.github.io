@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="https://user-images.githubusercontent.com/5518/205909959-12b92929-4ac5-4bb5-9111-6f9a3ed76cf6.png">
+    <title>GoBackup - Encrypt with OpenSSL</title>
+    <meta name="description" content="GoBackup is a simple tool for backup your databases, files to cloud storages.">
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <script src="/javascripts/site.js"></script>
+  </head>
+  <body class="main">
+    <header>
+      <h1>
+        <a href="/" class="logo"><img alt="GoBackup" src="https://user-images.githubusercontent.com/5518/205909959-12b92929-4ac5-4bb5-9111-6f9a3ed76cf6.png" /></a>
+        <a href="/">GoBackup</a>
+      </h1>
+      <ul>
+        <li><a href="/installation">Installation</a></li>
+        <li><a href="/release-notes">Release Notes</a></li>
+        <li><a href="/getting-started">Getting Started</a></li>
+        <li><a href="/schedule">Backup Schedule</a></li>
+      </ul>
+      <ul>
+        <li>
+          <a href="/configuration">Configuration</a>
+          <ul>
+            <li>
+              <span>Databases</span>
+              <ul>
+                <li><a href="/configuration/databases/mysql">MySQL</a></li>
+                <li><a href="/configuration/databases/postgresql">PostgreSQL</a></li>
+                <li><a href="/configuration/databases/mongodb">MongoDB</a></li>
+                <li><a href="/configuration/databases/redis">Redis</a></li>
+                <li><a href="/configuration/databases/sqlite">SQLite</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/configuration/archive">Archive</a>
+            </li>
+
+            <li>
+              <span>Compressor</span>
+              <ul>
+                <li><a href="/configuration/compressor/tar">Tar</a></a>
+              </ul>
+            </li>
+
+            <li>
+              <span>Encryptor</span>
+              <ul>
+                <li><a href="/configuration/encryptor/openssl">OpenSSL</a></a>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/configuration/splitter">Splitter</a>
+            </li>
+
+            <li>
+              <a href="/configuration/storages">Storages</a>
+              <ul>
+                <li><a href="/configuration/storages/local">Local</a></li>
+                <li><a href="/configuration/storages/ftp">FTP</a></li>
+                <li><a href="/configuration/storages/sftp">SFTP</a></li>
+                <li><a href="/configuration/storages/scp">SCP</a></li>
+                <li><a href="/configuration/storages/webdav">WebDAV</a></li>
+                <li><a href="/configuration/storages/s3">AWS S3</a></li>
+                <li><a href="/configuration/storages/oss">Aliyun OSS</a></li>
+                <li><a href="/configuration/storages/gcs">Google Cloud Storage</a></li>
+                <li><a href="/configuration/storages/azure">Azure Blob Storage</a></li>
+                <li><a href="/configuration/storages/r2">Cloudflare R2</a></li>
+                <li><a href="/configuration/storages/spaces">DigitalOcean Spaces</a></li>
+                <li><a href="/configuration/storages/b2">Backblaze B2</a></li>
+                <li><a href="/configuration/storages/cos">QCloud COS</a></li>
+                <li><a href="/configuration/storages/us3">UCloud US3</a></li>
+                <li><a href="/configuration/storages/kodo">Qiniu Kodo</a></li>
+                <li><a href="/configuration/storages/bos">Baidu BOS</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/configuration/notifiers">Notifiers</a>
+              <ul>
+                <li><a href="/configuration/notifiers/mail">Mail</a></li>
+                <li><a href="/configuration/notifiers/webhook">Webhook</a></li>
+                <li><a href="/configuration/notifiers/discord">Discord</a></li>
+                <li><a href="/configuration/notifiers/slack">Slack</a></li>
+                <li><a href="/configuration/notifiers/telegram">Telegram</a></li>
+                <li><a href="/configuration/notifiers/github">GitHub</a></li>
+                <li><a href="/configuration/notifiers/dingtalk">DingTalk</a></li>
+                <li><a href="/configuration/notifiers/feishu">Feishu</a></li>
+                <li><a href="/configuration/notifiers/ses">AWS SES</a></li>
+                <li><a href="/configuration/notifiers/postmark">Postmark</a></li>
+                <li><a href="/configuration/notifiers/sendgrid">SendGrid</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="https://github.com/gobackup/gobackup" target="_blank">GitHub</a>
+        </li>
+        <li><a href="https://github.com/gobackup/gobackup/releases"><img src="https://img.shields.io/github/v/release/gobackup/gobackup?label=Version&color=1" alt="GitHub release (latest by date)"></a></li>
+      </ul>
+
+    </header>
+    <div class="content">
+      <h1>Encrypt with OpenSSL</h1>
+
+<p>Create a password-protected backup file with <code>my_password</code> as the password.</p>
+
+<h2>Configuation</h2>
+
+<ul>
+<li><code>type: openssl</code></li>
+<li><code>chiper</code> - The cipher to use, default: <code>aes-256-cbc</code>.</li>
+<li><code>password</code> - Set password to encrypt the backup file, required.</li>
+<li><code>salt</code> - Use a salt in the key derivation routines, default: <code>true</code></li>
+<li><code>base64</code> - Whether to encode the encrypted file with base64, default: <code>false</code></li>
+<li><code>args</code> - Additional arguments to pass to the openssl command.</li>
+</ul>
+
+<p>For example</p>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">encrypt_with</span><span class="pi">:</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">openssl</span>
+  <span class="na">password</span><span class="pi">:</span> <span class="s">my_password</span>
+  <span class="c1"># (enabled by default) improves the security.</span>
+  <span class="na">salt</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="c1"># makes encrypted backups readable in text editors, emails, etc.</span>
+  <span class="na">base64</span><span class="pi">:</span> <span class="no">false</span>
+</code></pre></div>
+<p>This will encrypt your backup file using OpenSSL <code>aes-256-cbc</code>.</p>
+
+<h2>Decrypting your backup file</h2>
+
+<p>To decrypt your backup, use the following command:</p>
+<div class="highlight"><pre class="highlight shell"><code><span class="nv">$ </span>openssl aes-256-cbc <span class="nt">-d</span> <span class="nt">-base64</span> <span class="nt">-in</span> my_backup.tar.gz.enc <span class="nt">-out</span> my_backup.tar.gz
+</code></pre></div>
+<p><code>-base64</code> is only required if you used <code>base64: true</code>.</p>
+
+<p>You will be prompted for your password.</p>
+
+<h2>QA</h2>
+
+<ul>
+<li>If you are encrypting on OpenSSL 1.x and decrypting on OpenSSL 3.x, you will need to use the <code>-md md5</code> flag, <a href="https://stackoverflow.com/questions/39637388/encryption-decryption-doesnt-work-well-between-two-different-openssl-versions">read details</a>.</li>
+</ul>
+<div class="highlight"><pre class="highlight shell"><code>  <span class="nv">$ </span>openssl aes-256-cbc <span class="nt">-d</span> <span class="nt">-md</span> md5 <span class="nt">-in</span> my_backup.tar.gz.enc <span class="nt">-out</span> my_backup.tar.gz
+</code></pre></div>
+    </div>
+  </body>
+</html>

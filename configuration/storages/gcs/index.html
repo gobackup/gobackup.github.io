@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="https://user-images.githubusercontent.com/5518/205909959-12b92929-4ac5-4bb5-9111-6f9a3ed76cf6.png">
+    <title>GoBackup - Google Cloud Storage</title>
+    <meta name="description" content="GoBackup is a simple tool for backup your databases, files to cloud storages.">
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <script src="/javascripts/site.js"></script>
+  </head>
+  <body class="main">
+    <header>
+      <h1>
+        <a href="/" class="logo"><img alt="GoBackup" src="https://user-images.githubusercontent.com/5518/205909959-12b92929-4ac5-4bb5-9111-6f9a3ed76cf6.png" /></a>
+        <a href="/">GoBackup</a>
+      </h1>
+      <ul>
+        <li><a href="/installation">Installation</a></li>
+        <li><a href="/release-notes">Release Notes</a></li>
+        <li><a href="/getting-started">Getting Started</a></li>
+        <li><a href="/schedule">Backup Schedule</a></li>
+      </ul>
+      <ul>
+        <li>
+          <a href="/configuration">Configuration</a>
+          <ul>
+            <li>
+              <span>Databases</span>
+              <ul>
+                <li><a href="/configuration/databases/mysql">MySQL</a></li>
+                <li><a href="/configuration/databases/postgresql">PostgreSQL</a></li>
+                <li><a href="/configuration/databases/mongodb">MongoDB</a></li>
+                <li><a href="/configuration/databases/redis">Redis</a></li>
+                <li><a href="/configuration/databases/sqlite">SQLite</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/configuration/archive">Archive</a>
+            </li>
+
+            <li>
+              <span>Compressor</span>
+              <ul>
+                <li><a href="/configuration/compressor/tar">Tar</a></a>
+              </ul>
+            </li>
+
+            <li>
+              <span>Encryptor</span>
+              <ul>
+                <li><a href="/configuration/encryptor/openssl">OpenSSL</a></a>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/configuration/splitter">Splitter</a>
+            </li>
+
+            <li>
+              <a href="/configuration/storages">Storages</a>
+              <ul>
+                <li><a href="/configuration/storages/local">Local</a></li>
+                <li><a href="/configuration/storages/ftp">FTP</a></li>
+                <li><a href="/configuration/storages/sftp">SFTP</a></li>
+                <li><a href="/configuration/storages/scp">SCP</a></li>
+                <li><a href="/configuration/storages/webdav">WebDAV</a></li>
+                <li><a href="/configuration/storages/s3">AWS S3</a></li>
+                <li><a href="/configuration/storages/oss">Aliyun OSS</a></li>
+                <li><a href="/configuration/storages/gcs">Google Cloud Storage</a></li>
+                <li><a href="/configuration/storages/azure">Azure Blob Storage</a></li>
+                <li><a href="/configuration/storages/r2">Cloudflare R2</a></li>
+                <li><a href="/configuration/storages/spaces">DigitalOcean Spaces</a></li>
+                <li><a href="/configuration/storages/b2">Backblaze B2</a></li>
+                <li><a href="/configuration/storages/cos">QCloud COS</a></li>
+                <li><a href="/configuration/storages/us3">UCloud US3</a></li>
+                <li><a href="/configuration/storages/kodo">Qiniu Kodo</a></li>
+                <li><a href="/configuration/storages/bos">Baidu BOS</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/configuration/notifiers">Notifiers</a>
+              <ul>
+                <li><a href="/configuration/notifiers/mail">Mail</a></li>
+                <li><a href="/configuration/notifiers/webhook">Webhook</a></li>
+                <li><a href="/configuration/notifiers/discord">Discord</a></li>
+                <li><a href="/configuration/notifiers/slack">Slack</a></li>
+                <li><a href="/configuration/notifiers/telegram">Telegram</a></li>
+                <li><a href="/configuration/notifiers/github">GitHub</a></li>
+                <li><a href="/configuration/notifiers/dingtalk">DingTalk</a></li>
+                <li><a href="/configuration/notifiers/feishu">Feishu</a></li>
+                <li><a href="/configuration/notifiers/ses">AWS SES</a></li>
+                <li><a href="/configuration/notifiers/postmark">Postmark</a></li>
+                <li><a href="/configuration/notifiers/sendgrid">SendGrid</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="https://github.com/gobackup/gobackup" target="_blank">GitHub</a>
+        </li>
+        <li><a href="https://github.com/gobackup/gobackup/releases"><img src="https://img.shields.io/github/v/release/gobackup/gobackup?label=Version&color=1" alt="GitHub release (latest by date)"></a></li>
+      </ul>
+
+    </header>
+    <div class="content">
+      <h1>Google Cloud Storage</h1>
+
+<blockquote>
+<p>since: v1.2.0</p>
+</blockquote>
+
+<p>Storage backup file to <a href="https://cloud.google.com/storage">Google Cloud Storage</a>.</p>
+
+<h2>Storage config keys</h2>
+
+<p><code>type: gcs</code></p>
+
+<ul>
+<li><code>bucket</code> - Bucket name</li>
+<li><code>path</code> - remote path for save</li>
+<li><code>timeout</code> - Timeout in seconds, default: <code>300</code>, keep <code>0</code> to no limit.</li>
+<li><code>credentials</code> - JSON text of the Google Cloud Application Credentials, optional</li>
+<li><code>credentials_file</code> - Path to the Google Cloud Application Credentials file, optional</li>
+</ul>
+
+<p>For example:</p>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">models</span><span class="pi">:</span>
+  <span class="na">my_backup</span><span class="pi">:</span>
+    <span class="na">storages</span><span class="pi">:</span>
+      <span class="na">google_cloud</span><span class="pi">:</span>
+        <span class="na">type</span><span class="pi">:</span> <span class="s">gcs</span>
+        <span class="na">bucket</span><span class="pi">:</span> <span class="s">my-bucket</span>
+        <span class="na">path</span><span class="pi">:</span> <span class="s">my-backups/path</span>
+        <span class="na">timeout</span><span class="pi">:</span> <span class="m">300</span>
+        <span class="na">credentials</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">{</span>
+            <span class="s">"type": "service_account",</span>
+            <span class="s">"project_id": "your-project",</span>
+            <span class="s">"private_key_id": "d34a8bec191068177e7ce6c92c4a249d",</span>
+            <span class="s">"private_key": "-----BEGIN PRIVATE KEY-----\n....\n-----END PRIVATE KEY-----\n",</span>
+            <span class="s">"client_email": "test@your.iam.gserviceaccount.com",</span>
+            <span class="s">"client_id": "12345",</span>
+            <span class="s">"auth_uri": "https://accounts.google.com/o/oauth2/auth",</span>
+            <span class="s">"token_uri": "https://oauth2.googleapis.com/token",</span>
+            <span class="s">"auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",</span>
+            <span class="s">"client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gobackup-test%40your.iam.gserviceaccount.com"</span>
+          <span class="s">}</span>
+</code></pre></div>
+<p><a href="https://github.com/gobackup/gobackup/blob/main/storage/gcs.go">https://github.com/gobackup/gobackup/blob/main/storage/gcs.go</a></p>
+
+    </div>
+  </body>
+</html>

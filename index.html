@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="https://user-images.githubusercontent.com/5518/205909959-12b92929-4ac5-4bb5-9111-6f9a3ed76cf6.png">
+    <title>GoBackup - Simple tool for backup your databases, files to cloud storages.</title>
+    <meta name="description" content="GoBackup is a simple tool for backup your databases, files to cloud storages.">
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <script src="/javascripts/site.js"></script>
+  </head>
+  <body class="main-home">
+    <header>
+      <h1>
+        <a href="/" class="logo"><img alt="GoBackup" src="https://user-images.githubusercontent.com/5518/205909959-12b92929-4ac5-4bb5-9111-6f9a3ed76cf6.png" /></a>
+        <a href="/">GoBackup</a>
+      </h1>
+      <ul>
+        <li><a href="/installation">Installation</a></li>
+        <li><a href="/release-notes">Release Notes</a></li>
+        <li><a href="/getting-started">Getting Started</a></li>
+        <li><a href="/schedule">Backup Schedule</a></li>
+      </ul>
+      <ul>
+        <li>
+          <a href="/configuration">Configuration</a>
+          <ul>
+            <li>
+              <span>Databases</span>
+              <ul>
+                <li><a href="/configuration/databases/mysql">MySQL</a></li>
+                <li><a href="/configuration/databases/postgresql">PostgreSQL</a></li>
+                <li><a href="/configuration/databases/mongodb">MongoDB</a></li>
+                <li><a href="/configuration/databases/redis">Redis</a></li>
+                <li><a href="/configuration/databases/sqlite">SQLite</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/configuration/archive">Archive</a>
+            </li>
+
+            <li>
+              <span>Compressor</span>
+              <ul>
+                <li><a href="/configuration/compressor/tar">Tar</a></a>
+              </ul>
+            </li>
+
+            <li>
+              <span>Encryptor</span>
+              <ul>
+                <li><a href="/configuration/encryptor/openssl">OpenSSL</a></a>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/configuration/splitter">Splitter</a>
+            </li>
+
+            <li>
+              <a href="/configuration/storages">Storages</a>
+              <ul>
+                <li><a href="/configuration/storages/local">Local</a></li>
+                <li><a href="/configuration/storages/ftp">FTP</a></li>
+                <li><a href="/configuration/storages/sftp">SFTP</a></li>
+                <li><a href="/configuration/storages/scp">SCP</a></li>
+                <li><a href="/configuration/storages/webdav">WebDAV</a></li>
+                <li><a href="/configuration/storages/s3">AWS S3</a></li>
+                <li><a href="/configuration/storages/oss">Aliyun OSS</a></li>
+                <li><a href="/configuration/storages/gcs">Google Cloud Storage</a></li>
+                <li><a href="/configuration/storages/azure">Azure Blob Storage</a></li>
+                <li><a href="/configuration/storages/r2">Cloudflare R2</a></li>
+                <li><a href="/configuration/storages/spaces">DigitalOcean Spaces</a></li>
+                <li><a href="/configuration/storages/b2">Backblaze B2</a></li>
+                <li><a href="/configuration/storages/cos">QCloud COS</a></li>
+                <li><a href="/configuration/storages/us3">UCloud US3</a></li>
+                <li><a href="/configuration/storages/kodo">Qiniu Kodo</a></li>
+                <li><a href="/configuration/storages/bos">Baidu BOS</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/configuration/notifiers">Notifiers</a>
+              <ul>
+                <li><a href="/configuration/notifiers/mail">Mail</a></li>
+                <li><a href="/configuration/notifiers/webhook">Webhook</a></li>
+                <li><a href="/configuration/notifiers/discord">Discord</a></li>
+                <li><a href="/configuration/notifiers/slack">Slack</a></li>
+                <li><a href="/configuration/notifiers/telegram">Telegram</a></li>
+                <li><a href="/configuration/notifiers/github">GitHub</a></li>
+                <li><a href="/configuration/notifiers/dingtalk">DingTalk</a></li>
+                <li><a href="/configuration/notifiers/feishu">Feishu</a></li>
+                <li><a href="/configuration/notifiers/ses">AWS SES</a></li>
+                <li><a href="/configuration/notifiers/postmark">Postmark</a></li>
+                <li><a href="/configuration/notifiers/sendgrid">SendGrid</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="https://github.com/gobackup/gobackup" target="_blank">GitHub</a>
+        </li>
+        <li><a href="https://github.com/gobackup/gobackup/releases"><img src="https://img.shields.io/github/v/release/gobackup/gobackup?label=Version&color=1" alt="GitHub release (latest by date)"></a></li>
+      </ul>
+
+    </header>
+    <div class="content">
+      <div class="welcome">
+  <img class="logo" src="https://user-images.githubusercontent.com/5518/205909959-12b92929-4ac5-4bb5-9111-6f9a3ed76cf6.png" alt="GoBackup" />
+  <h1>GoBackup</h1>
+  <h2>CLI tool for backup your databases, files to FTP / SCP / S3 / GCS and other cloud storages.</h2>
+  <p class="badges">
+    <a href="https://github.com/gobackup/gobackup/actions?query=workflow%3AGo"><img src="https://github.com/gobackup/gobackup/workflows/Go/badge.svg" alt="Build Status" /></a>
+   <a href="https://github.com/gobackup/gobackup/releases"><img src="https://img.shields.io/github/v/release/gobackup/gobackup?label=Version&color=1" alt="GitHub release (latest by date)"></a>
+   <a href="https://hub.docker.com/r/huacnlee/gobackup"><img src="https://img.shields.io/docker/v/huacnlee/gobackup?label=Docker&color=blue" alt="Docker Image Version (latest server)"></a>
+  </p>
+</div>
+
+<pre style="text-align: center">curl -sSL https://gobackup.github.io/install | sh</pre>
+
+<p>Or install via Homebrew</p>
+
+<pre style="text-align: center">brew install gobackup</pre>
+
+<p>GoBackup is a full-stack backup tool designed for application servers, to backup your databases, and files to cloud storages (Local disk, FTP, SCP, S3, GCS, Aliyun OSS &hellip;).</p>
+
+<blockquote>
+<p>Inspired by <a href="https://github.com/backup/backup">backup/backup</a> and replace it for without Ruby dependency.</p>
+</blockquote>
+
+<p><a href="https://asciinema.org/a/543564"><img src="https://asciinema.org/a/543564.svg" alt="asciicast" /></a></p>
+
+<p>You can write a config file, run <code>gobackup perform</code> command once to dump database as file, archive config files, and then package them into a single file.</p>
+
+<p>It&rsquo;s allow you store the backup file to local, FTP, SCP, S3 or other cloud storages.</p>
+
+<p>GoBackup 是一个类似 <a href="https://github.com/backup/backup">backup/backup</a> 的一站式备份工具，为中小型服务器／个人服务器而设计，配合 Crontab 以实现定时备份的目的。</p>
+
+<p>使用 GoBackup 你可以通过一个简单的配置文件，一次（执行一个命令）将服务器上重要的（数据库、配置文件）东西导出、打包压缩，并备份到指定目的地（如：本地路径、FTP、云存储&hellip;）。</p>
+
+<h2>Features</h2>
+
+<ul>
+<li>No dependencies.</li>
+<li>Multiple Databases source support.</li>
+<li>Multiple Storage type support.</li>
+<li>Archive paths or files into a tar.</li>
+<li>Split a large backup file into multiple parts.</li>
+<li>Run as a daemon to backup in schedully.</li>
+</ul>
+
+<h3>Databases</h3>
+
+<ul>
+<li>MySQL</li>
+<li>PostgreSQL</li>
+<li>Redis - <code>mode: sync/copy</code></li>
+<li>MongoDB</li>
+<li>SQLite</li>
+</ul>
+
+<h3>Archive</h3>
+
+<p>Use <code>tar</code> command to archive many file or path into a <code>.tar</code> file.</p>
+
+<h3>Compressor</h3>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Extension</th>
+<th>Parallel Support by</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>gz</code>, <code>tgz</code>, <code>taz</code>, <code>tar.gz</code></td>
+<td><code>.tar.gz</code></td>
+<td>pigz</td>
+</tr>
+<tr>
+<td><code>Z</code>, <code>taZ</code>, <code>tar.Z</code></td>
+<td><code>.tar.Z</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>bz2</code>, <code>tbz</code>, <code>tbz2</code>, <code>tar.bz2</code></td>
+<td><code>.tar.bz2</code></td>
+<td>pbzip2</td>
+</tr>
+<tr>
+<td><code>lz</code>, <code>tar.lz</code></td>
+<td><code>.tar.lz</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>lzma</code>, <code>tlz</code>, <code>tar.lzma</code></td>
+<td><code>.tar.lzma</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>lzo</code>, <code>tar.lzo</code></td>
+<td><code>.tar.lzo</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>xz</code>, <code>txz</code>, <code>tar.xz</code></td>
+<td><code>.tar.xz</code></td>
+<td>pixz</td>
+</tr>
+<tr>
+<td><code>zst</code>, <code>tzst</code>, <code>tar.zst</code></td>
+<td><code>.tar.zst</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>tar</code></td>
+<td><code>.tar</code></td>
+<td></td>
+</tr>
+<tr>
+<td>default</td>
+<td><code>.tar</code></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h3>Encryptor</h3>
+
+<ul>
+<li>OpenSSL - <code>aes-256-cbc</code> encrypt</li>
+</ul>
+
+<h3>Storages</h3>
+
+<ul>
+  <li><a href="/configuration/storages/local">Local</a></li>
+  <li><a href="/configuration/storages/ftp">FTP</a></li>
+  <li><a href="/configuration/storages/sftp">SFTP</a></li>
+  <li><a href="/configuration/storages/scp">SCP</a></li>
+  <li><a href="/configuration/storages/s3">AWS S3</a></li>
+  <li><a href="/configuration/storages/oss">Aliyun OSS</a></li>
+  <li><a href="/configuration/storages/gcs">Google Cloud Storage</a></li>
+  <li><a href="/configuration/storages/r2">Cloudflare R2</a></li>
+  <li><a href="/configuration/storages/spaces">DigitalOcean Spaces</a></li>
+  <li><a href="/configuration/storages/b2">Backblaze B2</a></li>
+  <li><a href="/configuration/storages/cos">QCloud COS</a></li>
+  <li><a href="/configuration/storages/us3">UCloud US3</a></li>
+  <li><a href="/configuration/storages/kodo">Qiniu Kodo</a></li>
+  <li><a href="/configuration/storages/bos">Baidu BOS</a></li>
+</ul>
+
+<h3>Notifier</h3>
+
+<p>GoBackup Notifiers send notifications to you when the backup has been successful or failed.</p>
+
+    </div>
+  </body>
+</html>
