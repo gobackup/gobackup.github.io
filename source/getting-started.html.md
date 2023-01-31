@@ -16,7 +16,7 @@ $ touch ~/.gobackup/gobackup.yml
 
 > NOTE: Or put config file in there: `/etc/gobackup/gobackup.yml`
 
-And then edit config file like this:
+And then edit the config file like this:
 
 ```yml
 models:

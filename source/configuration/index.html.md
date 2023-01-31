@@ -4,7 +4,7 @@ title: Configuration
 
 <h1>Configuration</h1>
 
-GoBackup will read config from follow paths:
+GoBackup will read config from following paths:
 
 - `~/.gobackup/gobackup.yml`
 - `/etc/gobackup.yml`
@@ -101,7 +101,7 @@ More example: https://github.com/gobackup/gobackup/blob/main/gobackup_test.yml
 
 > since: 1.6.0
 
-GoBackup has supports use ENV variables in config, for keep secrets info more secure.
+GoBackup supports to use ENV variables in config, to keep secrets info more secure.
 
 Use `$ENV_KEY` or `${ENV_KEY}` to get ENV variables.
 
@@ -126,7 +126,7 @@ models:
         secret_access_key: ${AWS_SECRET_ACCESS_KEY}
 ```
 
-Now you can set ENV in you bash or in `.env` file.
+Now you can set ENV in your bash or in `.env` file.
 
 ```conf
 POSTGRESQL_USERNAME=postgres

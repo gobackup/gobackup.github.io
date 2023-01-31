@@ -19,7 +19,7 @@ And then visit [Azure Active Directory / App registrations](https://portal.azure
 - `account` - Azure Storage Account name, alias: `bucket`
 - `container` - Container name
 - `tenant_id` - Azure Tenant ID, you can find in [Azure Active Directory - Overview](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview) page, e.g. `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`
-- `client_id` - Azure Client ID, you can find in [Azure Active Directory - App registrations](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps) list (The column named **Application (client) ID**) after you have been created a App registration, e.g. `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`
+- `client_id` - Azure Client ID, you can find in [Azure Active Directory - App registrations](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps) list (The column named **Application (client) ID**) after you have created a App registration, e.g. `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`
 - `client_secret` - Azure Client Secret
 - `timeout` - Timeout in seconds, default: `300`, keep `0` to no limit.
 

@@ -6,7 +6,7 @@ title: Qiniu Kodo
 
 > since: v1.2.0
 
-Storage backup file to [Qiniu Kodo](https://www.qiniu.com/products/kodo), this is base on S3 compatible.
+Storage backup file to [Qiniu Kodo](https://www.qiniu.com/products/kodo), this is based on S3 compatibility.
 
 ## Storage config keys
 

@@ -4,7 +4,7 @@ title: Storage
 
 # Storages
 
-GoBackup built-in multiple storages, you can use one or more storages to store backup file.
+GoBackup has built-in multiple storages, you can use one or more storages to store backup file.
 
 Use `storages` config to set storages.
 
@@ -25,7 +25,7 @@ models:
         secret_access_key: xxx
 ```
 
-When you setup multiple storages, GoBackup will upload backup file to all storages.
+When you set up multiple storages, GoBackup will upload backup file to all storages.
 
 ## Cycling Stored Backups
 
@@ -45,6 +45,6 @@ models:
 
 **`keep` as a Number**
 
-If `keep` have specified and once the `keep` limit has been reached, the older backup files will be removed.
+If `keep` having specified and once the `keep` limit has been reached, the older backup files will be removed.
 
 GoBackup will save the backup histories in `~/.gobackup/cycler.json`.

@@ -35,7 +35,7 @@ compress_with:
 [Pigz](https://zlib.net/pigz) is a parallel implementation of gzip for modern
 multi-processor for speedup compress.
 
-When you has been installed pigz, GoBackup will auto enable it.
+When you has been installed `pigz`, GoBackup will auto-enable it.
 
 ### Install on Ubuntu
 

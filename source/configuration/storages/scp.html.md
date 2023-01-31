@@ -4,7 +4,7 @@ title: SCP storage
 
 # SCP storage
 
-Storage backup file to remote SSH server, like `scp` command.
+Storage backup file to the remote SSH server, like `scp` command.
 
 ## Storage config keys
 
@@ -15,7 +15,7 @@ Storage backup file to remote SSH server, like `scp` command.
 - `path` - SSH remote path for save
 - `timeout` - Set timeout of remote upload, default: `300`
 - `private_key` - Your SSH private key, default: `~/.ssh/id_rsa` (Optional)
-- `passpharase` - Password of the private key, if is present. (Optional)
+- `passpharase` - Password of the private key, if it present. (Optional)
 - `username` - SSH username, (Optional)
 - `password` - SSH password, (Optional)
 

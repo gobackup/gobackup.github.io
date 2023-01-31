@@ -6,9 +6,9 @@ title: Backup Schedule
 
 > since: 1.3.0
 
-GoBackup built in a daemon mode, use `gobackup start` to start as service in background.
+GoBackup is built in a daemon mode, use `gobackup start` to start as a service in the background.
 
-You can configure the `schedule` for each models, it will run backup task at the time you set.
+You can configure the `schedule` for each model, it will run backup task at the time you set.
 
 ```yml
 models:
@@ -53,7 +53,7 @@ And then start daemon:
 gobackup start
 ```
 
-Now, there have a service named `gobackup` as running in background.
+Now, there has a service named `gobackup` running in background.
 
 ```
 $ ps aux | grep gobackup
@@ -66,7 +66,7 @@ jason            20443   0.0  0.1 409232800   8912   ??  Ss    7:47PM   0:00.02 
 
 GoBackup will handle the following signals:
 
-- `HUP` - Hot reload configuration.
+- `HUP` - Hot reload the configuration.
 - `QUIT` - Graceful shutdown.
 
 ```bash
@@ -92,4 +92,4 @@ Append this line and save it:
 
 > `0 0 * * *` means run at 0:00 AM, every day.
 
-And after a day, you can check up the execute status by ~/.gobackup/gobackup.log.
+And after a day, you can check the execute status by ~/.gobackup/gobackup.log.

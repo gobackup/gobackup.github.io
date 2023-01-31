@@ -4,7 +4,7 @@ title: Configuration - Redis database
 
 # Redis database
 
-GoBackup use `redis-cli` utility to export MySQL database into a `dump.db` file.
+GoBackup uses `redis-cli` utility to export MySQL database into a `dump.db` file.
 
 ## Database config keys
 

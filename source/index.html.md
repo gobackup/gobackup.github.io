@@ -19,13 +19,13 @@ Or install via Homebrew
 
 <pre style="text-align: center">brew install gobackup</pre>
 
-GoBackup is a fullstack backup tool design for application servers, to backup your databases, files to cloud storages (Local disk, FTP, SCP, S3, GCS, Aliyun OSS ...).
+GoBackup is a full-stack backup tool designed for application servers, to backup your databases, and files to cloud storages (Local disk, FTP, SCP, S3, GCS, Aliyun OSS ...).
 
 > Inspired by [backup/backup](https://github.com/backup/backup) and replace it for without Ruby dependency.
 
 [![asciicast](https://asciinema.org/a/543564.svg)](https://asciinema.org/a/543564)
 
-You can write a config file, run `gobackup perform` command by once to dump database as file, archive config files, and then package them into a single file.
+You can write a config file, run `gobackup perform` command once to dump database as file, archive config files, and then package them into a single file.
 
 It's allow you store the backup file to local, FTP, SCP, S3 or other cloud storages.
 
@@ -39,8 +39,8 @@ GoBackup 是一个类似 [backup/backup](https://github.com/backup/backup) 的�
 - Multiple Databases source support.
 - Multiple Storage type support.
 - Archive paths or files into a tar.
-- Split large backup file into multiple parts.
-- Run as daemon to backup in schedully.
+- Split a large backup file into multiple parts.
+- Run as a daemon to backup in schedully.
 
 ### Databases
 
@@ -94,4 +94,4 @@ Use `tar` command to archive many file or path into a `.tar` file.
 
 ### Notifier
 
-GoBackup Notifiers for send notifications to your, when the backup has been successfully or failed.
+GoBackup Notifiers send notifications to you when the backup has been successful or failed.

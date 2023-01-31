@@ -4,7 +4,7 @@ title: Configuration - PostgreSQL database
 
 # PostgreSQL database
 
-GoBackup use `pg_dump` utility to backup PostgreSQL database into a `.sql` file.
+GoBackup uses `pg_dump` utility to backup PostgreSQL database into a `.sql` file.
 
 ## Database config keys
 

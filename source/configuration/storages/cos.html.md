@@ -6,7 +6,7 @@ title: QCloud COS
 
 > since: v1.2.0
 
-Storage backup file to [QCloud COS](https://cloud.tencent.com/product/cos), this is base on S3 compatible.
+Storage backup file to [QCloud COS](https://cloud.tencent.com/product/cos), this is based on S3 compatibility.
 
 ## Storage config keys
 

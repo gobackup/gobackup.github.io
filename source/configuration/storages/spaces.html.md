@@ -6,7 +6,7 @@ title: DigitalOcean Spaces
 
 > since: v1.2.0
 
-Storage backup file to [DigitalOcean Spaces](https://www.digitalocean.com/products/spaces/), this is base on S3 compatible.
+Storage backup file to [DigitalOcean Spaces](https://www.digitalocean.com/products/spaces/), this is based on S3 compatibility.
 
 ## Storage config keys
 

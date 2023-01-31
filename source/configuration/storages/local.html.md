@@ -10,7 +10,7 @@ Storage backup file in local path.
 
 `type: local`
 
-- `path` - path you need store backup files.
+- `path` - path you need to store backup files.
 
 https://github.com/gobackup/gobackup/blob/main/storages/local.go
 

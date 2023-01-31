@@ -6,7 +6,7 @@ title: Baidu BOS
 
 > since: v1.5.0
 
-Storage backup file to [Baidu BOS](https://cloud.baidu.com/product/bos.html), this is base on S3 compatible.
+Storage backup file to [Baidu BOS](https://cloud.baidu.com/product/bos.html), this is based on S3 compatibility.
 
 ## Storage config keys
 

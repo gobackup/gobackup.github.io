@@ -2,9 +2,7 @@
 title: Installation
 ---
 
-<h1>Installation</h1>
-
-You can easy install GoBackup, because it's a single binray file.
+You can easily install GoBackup because it's a single binary file.
 
 ## macOS / Linux
 
@@ -14,7 +12,7 @@ curl -sSL https://gobackup.github.io/install | sh
 
 > This command can install or upgrade GoBackup.
 
-After that, GoBackup has installed to `/usr/local/bin/gobackup`, you can run `gobackup` command in every where.
+After that, GoBackup has been installed to `/usr/local/bin/gobackup`, you can run `gobackup` command everywhere.
 
 ### Install via Homebrew
 
@@ -27,6 +25,6 @@ $ gobackup -v
 GoBackup 1.3.0
 ```
 
-## Other platform
+## Other platforms
 
 https://github.com/gobackup/gobackup/releases

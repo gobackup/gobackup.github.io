@@ -6,7 +6,7 @@ title: UCloud US3
 
 > since: v1.2.0
 
-Storage backup file to [UCloud US3](https://www.ucloud.cn/site/product/ufile.html), this is base on S3 compatible.
+Storage backup file to [UCloud US3](https://www.ucloud.cn/site/product/ufile.html), this is based on S3 compatibility.
 
 ## Storage config keys
 

@@ -4,9 +4,9 @@ title: Configuration - SQLite database
 
 # SQLite database
 
-GoBackup use `sqlite` utility to export SQLite database into a `.sql` file.
+GoBackup uses `sqlite` utility to export SQLite database into a `.sql` file.
 
-So you need install `sqlite3` first.
+So you need to install `sqlite3` first.
 
 ```bash
 $ sudo apt-get install sqlite3

@@ -4,7 +4,7 @@ title: MongoDB database
 
 # MongoDB database
 
-GoBackup use `mongodump` utility to backup MongoDB database files.
+GoBackup uses `mongodump` utility to backup MongoDB database files.
 
 ## Database config keys
 

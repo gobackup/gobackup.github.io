@@ -4,9 +4,9 @@ title: Configuration - MySQL database
 
 # MySQL database
 
-GoBackup use `mysqldump` utility to export MySQL database into a `.sql` file.
+GoBackup uses `mysqldump` utility to export MySQL database into a `.sql` file.
 
-So you need install `mysql-client` first.
+So you need to install `mysql-client` first.
 
 ```bash
 $ sudo apt-get install mysql-client
@@ -22,7 +22,7 @@ $ sudo apt-get install mysql-client
 - `database` - database name
 - `username` - default: `root`
 - `password`
-- `additional_options` - Additional options for mysqldump utility, for example: `--single-transaction --quick`
+- `additional_options` - Additional options for `mysqldump` utility, for example: `--single-transaction --quick`
 
 https://github.com/gobackup/gobackup/blob/main/database/mysql.go
 
