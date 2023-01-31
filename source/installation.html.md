@@ -22,7 +22,7 @@ brew install gobackup
 
 ```bash
 $ gobackup -v
-GoBackup 1.3.0
+GoBackup 1.6.5
 ```
 
 ## Other platforms
