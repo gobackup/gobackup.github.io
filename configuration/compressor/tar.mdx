@@ -1,0 +1,50 @@
+---
+title: Tar
+---
+
+Use `.tar` format to compress backup file.
+
+And we can use many other tools to compress `.tar` file, such as `gzip`, `bzip2`, `xz` ...
+
+## Formats
+
+| Type                            | Extension   | Parallel Support by |
+| ------------------------------- | ----------- | ------------------- |
+| `gz`, `tgz`, `taz`, `tar.gz`    | `.tar.gz`   | pigz                |
+| `Z`, `taZ`, `tar.Z`             | `.tar.Z`    |                     |
+| `bz2`, `tbz`, `tbz2`, `tar.bz2` | `.tar.bz2`  | pbzip2              |
+| `lz`, `tar.lz`                  | `.tar.lz`   |                     |
+| `lzma`, `tlz`, `tar.lzma`       | `.tar.lzma` |                     |
+| `lzo`, `tar.lzo`                | `.tar.lzo`  |                     |
+| `xz`, `txz`, `tar.xz`           | `.tar.xz`   | pixz                |
+| `zst`, `tzst`, `tar.zst`        | `.tar.zst`  |                     |
+| `tar`                           | `.tar`      |                     |
+| default                         | `.tar`      |                     |
+
+## Example
+
+```yml
+compress_with:
+  type: tgz
+```
+
+## Speedup with pigz
+
+> since: v1.1.2
+
+[Pigz](https://zlib.net/pigz) is a parallel implementation of gzip for modern
+multi-processor for speedup compress.
+
+When you has been installed `pigz`, GoBackup will auto-enable it.
+
+### Install on Ubuntu
+
+```bash
+$ sudo apt-get install pigz
+```
+
+### Install on macOS
+
+```bash
+$ brew install pigz
+```

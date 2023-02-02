@@ -1,0 +1,33 @@
+---
+title: FTP
+---
+
+Storage backup file to remote FTP server.
+
+## Config keys
+
+`type: ftp`
+
+- `host` - FTP server host
+- `port` - FTP server port, default: `21`
+- `path` - FTP remote path for save
+- `timeout` - Set timeout of remote upload, default: `300`
+- `username` - username
+- `password` - password
+
+https://github.com/gobackup/gobackup/blob/main/storages/ftp.go
+
+## Example
+
+```yml
+models:
+  my_backup:
+    storages:
+      ftp:
+        type: ftp
+        host: ftp.example.com
+        port: 21
+        path: /data/my-backups
+        username: user
+        password: password
+```

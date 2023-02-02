@@ -1,0 +1,50 @@
+---
+title: Telegram
+---
+
+<Note>Since: 1.5.0</Note>
+
+[Telegram](https://telegram.org) is a team communication tool.
+
+We can send Telegram message by use [Telegram Bot API](https://core.telegram.org/bots/api#sendmessage), you can follow the [Telegram Bot Guide](https://core.telegram.org/bots#6-botfather) to get the bot `token`.
+
+## Config keys
+
+- `chat_id` - Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+- `token` - Telegram bot token
+
+## Get Token
+
+1. Search `BotFather` in Telegram Contacts.
+1. Create a new bot by sending the `/newbot` command to [BotFather](https://t.me/botfather).
+1. BotFather will ask you for a name and username, then generate an authorization token for your new bot.
+1. Copy the `token`.
+
+## Create a Channel to get `chat_id`
+
+1. Create a new channel named `GoBackup Notifer`.
+2. Set up channel as `Public Channel` and set channel link `t.me/gobackuptest`, and save.
+3. Your `chat_id` is `@gobackuptest`.
+4. Add the bot to the channel as an administrator.
+
+> NOTE: Channel id is unique, so you must rename `gobackuptest` to other name as you want.
+
+## Example
+
+```yml
+models:
+  my_app:
+    storages:
+      local:
+        type: local
+        keep: 10
+    notifiers:
+      telegram:
+        type: telegram
+        chat_id: '@gobackuptest'
+        token: this-is-your-bot-token
+```
+
+## Message Example
+
+<img src="https://user-images.githubusercontent.com/5518/207226201-cdd041de-8fc6-4eae-ba0d-acfd3f466bb0.png" style="max-width: 650px">

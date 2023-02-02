@@ -1,0 +1,27 @@
+---
+title: Postmark
+---
+
+<Note>Since: 1.5.0</Note>
+
+[Postmark](https://postmarkapp.com) is a transactional email service.
+
+We can send Postmark message by use [Postmark API](https://postmarkapp.com/developer/api/overview), you can follow the [Postmark API Guide](https://postmarkapp.com/developer/api/overview) to get the **Server Token**, format like `xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
+
+## Configuration
+
+```yml
+models:
+  my_app:
+    storages:
+      local:
+        type: local
+        keep: 10
+    notifiers:
+      postmark:
+        type: postmark
+        from: from@example.com
+        to: to@example.com
+        token: xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+        on_success: false
+```

@@ -1,0 +1,35 @@
+---
+title: SCP
+---
+
+Storage backup file to the remote SSH server, like `scp` command.
+
+## Config keys
+
+`type: scp`
+
+- `host` - SSH server host
+- `port` - SSH server port, default: `22`
+- `path` - SSH remote path for save
+- `timeout` - Set timeout of remote upload, default: `300`
+- `private_key` - Your SSH private key, default: `~/.ssh/id_rsa` (Optional)
+- `passpharase` - Password of the private key, if it present. (Optional)
+- `username` - SSH username, (Optional)
+- `password` - SSH password, (Optional)
+
+https://github.com/gobackup/gobackup/blob/main/storages/scp.go
+
+## Example
+
+```yml
+models:
+  my_backup:
+    storages:
+      scp_hk_vps:
+        type: scp
+        host: hk.myhost.com
+        port: 22
+        path: /data/my-backups
+        username: user
+        private_key: ~/.ssh/id_rsa
+```
