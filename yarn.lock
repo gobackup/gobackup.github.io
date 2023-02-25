@@ -2000,10 +2000,10 @@ minimist@^1.2.0, minimist@^1.2.3:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.7.tgz#daa1c4d91f507390437c6a8bc01078e7000c4d18"
   integrity sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==
 
-mintlify@^2.0.17:
-  version "2.0.17"
-  resolved "https://registry.yarnpkg.com/mintlify/-/mintlify-2.0.17.tgz#3c816c6a39d17407b4427b8643f1b663732f8bef"
-  integrity sha512-W7pyIj0AGJYR+vR8E08E7BTMhANW2Kfe3NpfNRdMp+TL1ju50iN49U2T+MBCKQJAycCwXXX2nXf3Cve5sIDdzA==
+mintlify@^2.1:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/mintlify/-/mintlify-2.1.0.tgz#d5534f4e285edd1783ffd91cd011cda0b31b0e0f"
+  integrity sha512-ddB0sAF87GhETys/ZVktH/YueDsPf6v//qQrKV2QXPXUau7xKZdkc9FKTQHz/6367eAv/cXr9lz2NCFGHO1eKQ==
   dependencies:
     "@apidevtools/swagger-parser" "^10.1.0"
     "@mintlify/validation" "^0.1.5"
