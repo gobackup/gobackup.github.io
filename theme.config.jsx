@@ -11,6 +11,19 @@ export default {
   sidebar: {
     defaultMenuCollapseLevel: 2,
   },
+  head: (
+    <>
+      <link
+        rel="icon"
+        type="image/png"
+        href="https://user-images.githubusercontent.com/5518/205909959-12b92929-4ac5-4bb5-9111-6f9a3ed76cf6.png"
+      ></link>
+      <meta
+        name="description"
+        content="GoBackup is a simple tool for backup your databases, files to cloud storages."
+      ></meta>
+    </>
+  ),
   logo: (
     <>
       <img
