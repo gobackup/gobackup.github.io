@@ -1,0 +1,23 @@
+# Slack
+
+> Since: 1.5.0
+
+[Slack](https://slack.com) is a team communication tool.
+
+We can send Slack message by use [Incoming Webhooks](https://api.slack.com/messaging/webhooks), you can follow the [Slack Incoming Webhooks Guide](https://api.slack.com/messaging/webhooks) to get the webhook `url`.
+
+## Configuration
+
+```yml
+models:
+  my_app:
+    storages:
+      local:
+        type: local
+        keep: 10
+    notifiers:
+      slack:
+        type: slack
+        url: https://hooks.slack.com/services/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o2
+        on_success: false
+```

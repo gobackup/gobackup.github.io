@@ -1,0 +1,48 @@
+# Storage Overview
+
+GoBackup has built-in multiple storages, you can use one or more storages to store backup file.
+
+Use `storages` config to set storages.
+
+## Example
+
+```yml
+models:
+  my_app:
+    storages:
+      local_disk:
+        type: local
+        path: /data/backups
+      s3:
+        type: s3
+        bucket: my-bucket
+        region: us-east-1
+        access_key_id: xxx
+        secret_access_key: xxx
+```
+
+When you set up multiple storages, GoBackup will upload backup file to all storages.
+
+## Cycling
+
+GoBackup allows you to config how many backups to keep at each storage.
+
+Each Storage supports the `keep` setting, which specifies how many backups to keep at this location.
+
+For example:
+
+```yml
+models:
+  my_app:
+    storages:
+      local_disk:
+        type: local
+        keep: 10
+        path: /data/backups
+```
+
+**`keep` as a Number**
+
+If `keep` having specified and once the `keep` limit has been reached, the older backup files will be removed.
+
+GoBackup will save the backup histories in `~/.gobackup/cycler.json`.

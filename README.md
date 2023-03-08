@@ -5,12 +5,17 @@ https://gobackup.github.io
 ## Development
 
 ```bash
-bundle install
-make serve
+pnpm install
+```
+
+### Start Dev server
+
+```bash
+pnpm dev
 ```
 
 ## Publish pages
 
 ```bash
-make release
+pnpm build
 ```
