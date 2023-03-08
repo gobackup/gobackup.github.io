@@ -41,7 +41,8 @@ export default {
     </>
   ),
   footer: false,
-  docsRepositoryBase: 'https://github.com/gobackup/gobackup.github.io/blob',
+  docsRepositoryBase:
+    'https://github.com/gobackup/gobackup.github.io/edit/main',
   project: {
     link: 'https://github.com/gobackup/gobackup',
   },
