@@ -1,0 +1,26 @@
+{
+  "index": "Home",
+  "_home": {
+    "title": "Home",
+    "type": "page",
+    "href": "/"
+  },
+  "releases": {
+    "title": "Releases",
+    "type": "page",
+    "href": "https://github.com/gobackup/gobackup/releases",
+    "newWindow": true
+  },
+  "-- Quick Start": {
+    "type": "separator",
+    "title": ""
+  },
+  "installation": "",
+  "getting-started": {},
+  "schedule": "Schedule",
+  "-- configuration": {
+    "type": "separator",
+    "title": ""
+  },
+  "configuration": "Configuration"
+}

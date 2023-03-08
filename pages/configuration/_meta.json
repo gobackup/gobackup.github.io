@@ -1,0 +1,10 @@
+{
+  "index": "Overview",
+  "databases": "Databases",
+  "archive": "",
+  "storages": "Storages",
+  "compressor": "Compressor",
+  "encryptor": "Encryptor",
+  "splitter": "Splitter",
+  "notifiers": "Notifiers"
+}

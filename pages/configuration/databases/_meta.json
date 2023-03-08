@@ -1,0 +1,10 @@
+{
+  "index": {
+    "type": "hide"
+  },
+  "mysql": "",
+  "postgresql": "",
+  "mongodb": "",
+  "redis": "",
+  "sqlite": ""
+}
