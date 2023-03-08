@@ -5,7 +5,7 @@ export default {
     };
   },
   primaryHue: {
-    dark: 222,
+    dark: 215,
     light: 222,
   },
   sidebar: {
