@@ -3,4 +3,10 @@ const withNextra = require('nextra')({
   themeConfig: './theme.config.jsx',
 });
 
-module.exports = withNextra();
+module.exports = {
+  ...withNextra(),
+  distDir: 'dist',
+  images: {
+    unoptimized: true,
+  },
+};
