@@ -44,7 +44,9 @@ So you need to install `mysql-client` first.
 - `database` - database name
 - `username` - default: `root`
 - `password`
-- `additional_options` - Additional options for `mysqldump` utility, for example: `--single-transaction --quick`
+- `tables` - Array of tables to backup, default: `[]`
+- `exclude_tables` - Array of tables to exclude from backup, default: `[]`
+- `args` - Additional options for `mysqldump` utility, for example: `--single-transaction --quick`
 
 https://github.com/gobackup/gobackup/blob/main/database/mysql.go
 
@@ -61,5 +63,11 @@ models:
         database: my_app_production
         username: root
         password: root
-        additional_options: --single-transaction --quick
+        tables:
+          - users
+          - posts
+        exclude_tables:
+          - logs
+          - logs_1
+        args: --single-transaction --quick
 ```
