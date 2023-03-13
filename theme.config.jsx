@@ -43,6 +43,7 @@ export default {
       />
     </>
   ),
+  feedback: false,
   footer: false,
   docsRepositoryBase:
     'https://github.com/gobackup/gobackup.github.io/edit/main',
