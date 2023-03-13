@@ -10,6 +10,9 @@ export default {
   },
   sidebar: {
     defaultMenuCollapseLevel: 2,
+    titleComponent: ({ title, type }) => {
+      return <div className="text-gray-700 dark:text-gray-100">{title}</div>;
+    },
   },
   head: (
     <>
