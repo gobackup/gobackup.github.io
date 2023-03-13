@@ -6,12 +6,20 @@ title: MySQL
 
 GoBackup uses `mysqldump` utility to export MySQL database into a `.sql` file.
 
-## Prepare
+## Install tool
 
 So you need to install `mysql-client` first.
 
+For Ubuntu Server:
+
 ```bash
 $ sudo apt-get install mysql-client
+```
+
+For Alpine Linux:
+
+```bash
+$ sudo apk add mysql-client
 ```
 
 ## Config keys
