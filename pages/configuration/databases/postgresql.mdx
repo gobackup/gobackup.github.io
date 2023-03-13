@@ -6,6 +6,20 @@ title: PostgreSQL
 
 GoBackup uses `pg_dump` utility to backup PostgreSQL database into a `.sql` file.
 
+## Install `pg_dump`
+
+For Ubuntu Server:
+
+```bash
+$ sudo apt install postgresql-client
+```
+
+For Alpine Linux:
+
+```bash
+$ sudo apk add postgresql-client
+```
+
 ## Config keys
 
 `type: postgresql`
