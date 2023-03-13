@@ -2,17 +2,42 @@
 title: SQLite
 ---
 
+import { Tab, Tabs } from 'nextra-theme-docs';
+
 # SQLite
 
 GoBackup uses `sqlite` utility to export SQLite database into a `.sql` file.
 
-## Prepare
+## Install tool
 
-So you need to install `sqlite3` first.
 
-```bash
-$ sudo apt-get install sqlite3
-```
+
+
+<Tabs items={['Ubutnu Server', 'Alpine Linux', 'macOS']}>
+  <Tab>
+    So you need to install `sqlite3` first.
+
+    ```bash
+    $ sudo apt install sqlite3
+    ```
+  </Tab>
+  <Tab>
+    ```bash 
+    $ sudo apk add sqlite
+    ```
+
+    https://pkgs.alpinelinux.org/packages?name=sqlite
+  </Tab>
+  <Tab>
+    Install via Homebrew:
+
+    ```bash
+    $ brew install sqlite
+    ```
+
+    https://formulae.brew.sh/formula/sqlite
+  </Tab>
+</Tabs>
 
 ## Config keys
 

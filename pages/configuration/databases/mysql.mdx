@@ -2,6 +2,8 @@
 title: MySQL
 ---
 
+import { Tab, Tabs } from 'nextra-theme-docs';
+
 # MySQL
 
 GoBackup uses `mysqldump` utility to export MySQL database into a `.sql` file.
@@ -10,17 +12,27 @@ GoBackup uses `mysqldump` utility to export MySQL database into a `.sql` file.
 
 So you need to install `mysql-client` first.
 
-For Ubuntu Server:
+<Tabs items={['Ubutnu Server', 'Alpine Linux', 'macOS']}>
+  <Tab>
+    ```bash 
+    $ sudo apt install mysql-client 
+    ```
+  </Tab>
+  <Tab>
+    ```bash 
+    $ sudo apk add mysql-client 
+    ```
+  </Tab>
+  <Tab>
+    Install via Homebrew:
 
-```bash
-$ sudo apt-get install mysql-client
-```
+    ```bash
+    $ brew install mysql-client
+    ```
 
-For Alpine Linux:
-
-```bash
-$ sudo apk add mysql-client
-```
+    https://formulae.brew.sh/formula/mysql-client
+  </Tab>
+</Tabs>
 
 ## Config keys
 

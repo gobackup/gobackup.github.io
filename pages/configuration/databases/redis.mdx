@@ -2,19 +2,38 @@
 title: Redis
 ---
 
+import { Tab, Tabs } from 'nextra-theme-docs';
+
 # Redis
 
 GoBackup uses `redis-cli` utility to export MySQL database into a `dump.db` file.
 
-## Prepare
+## Install tool
 
 You must install `redis-cli` utility first.
 
-On Ubuntu Server you can use the following command:
 
-```bash
-sudo apt install redis
-```
+<Tabs items={['Ubutnu Server', 'Alpine Linux', 'macOS']}>
+  <Tab>
+    On Ubuntu Server you can use the following command:
+
+    ```bash 
+    $ sudo apt install redis
+    ```
+  </Tab>
+  <Tab>
+    ```bash 
+    $ sudo apk add redis
+    ```
+  </Tab>
+  <Tab>
+    Install via Homebrew:
+    
+    ```bash
+    $ brew install redis
+    ```
+  </Tab>
+</Tabs>
 
 ## Config keys
 

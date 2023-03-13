@@ -2,23 +2,33 @@
 title: PostgreSQL
 ---
 
+import { Tab, Tabs } from 'nextra-theme-docs';
+
 # PostgreSQL
 
 GoBackup uses `pg_dump` utility to backup PostgreSQL database into a `.sql` file.
 
-## Install `pg_dump`
+## Install tool
 
-For Ubuntu Server:
-
-```bash
-$ sudo apt install postgresql-client
-```
-
-For Alpine Linux:
-
-```bash
-$ sudo apk add postgresql-client
-```
+<Tabs items={['Ubutnu Server', 'Alpine Linux', 'macOS']}>
+  <Tab>
+    ```bash 
+    $ sudo apt install postgresql-client
+    ```
+  </Tab>
+  <Tab>
+    ```bash 
+    $ sudo apk add postgresql-client
+    ```
+  </Tab>
+  <Tab>
+    Install via Homebrew:
+    
+    ```bash
+    $ brew install postgresql
+    ```
+  </Tab>
+</Tabs>
 
 ## Config keys
 

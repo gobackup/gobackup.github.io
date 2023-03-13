@@ -2,9 +2,33 @@
 title: MongoDB
 ---
 
+import { Tab, Tabs } from 'nextra-theme-docs';
+
 # MongoDB
 
 GoBackup uses `mongodump` utility to backup MongoDB database files.
+
+## Install tool
+
+<Tabs items={['Ubutnu Server', 'Alpine Linux', 'macOS']}>
+  <Tab>
+    Visit https://www.mongodb.com/try/download/database-tools and download [MongoDB Tools](https://www.mongodb.com/try/download/database-tools).
+  </Tab>
+  <Tab>
+    ```bash 
+    $ sudo apk add mongodb-tools
+    ```
+  </Tab>
+  <Tab>
+    Install via Homebrew:
+
+    ```bash
+    $ brew install mongodb-database-tools
+    ```
+
+    https://www.mongodb.com/docs/database-tools/installation/installation-macos
+  </Tab>
+</Tabs>
 
 ## Config keys
 
