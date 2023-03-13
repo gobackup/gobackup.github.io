@@ -32,13 +32,13 @@ export default {
       <img
         src="/logo/web-logo.png"
         className="dark:hidden"
-        style={{ height: '28px' }}
+        style={{ height: '36px' }}
         alt="GoBackup"
       />
       <img
         src="/logo/web-logo-dark.png"
         className="hidden dark:block"
-        style={{ height: '28px' }}
+        style={{ height: '36px' }}
         alt="GoBackup"
       />
     </>
