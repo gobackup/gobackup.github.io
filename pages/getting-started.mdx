@@ -8,7 +8,7 @@ The following is a simple walk-through to familiarize you with how GoBackup work
 
 If you have not yet installed GoBackup, see the [Installation](/installation) page.
 
-## Config file
+## Init Config
 
 ```bash
 $ touch ~/.gobackup/gobackup.yml
@@ -41,7 +41,22 @@ models:
         - /var/www/my_app/shared/ssl
 ```
 
-## Perform backup
+## Start Service
+
+Use `gobackup start` to start the service in background.
+
+```bash
+$ gobackup start
+
+2023/03/15 23:00:30 [Config] Load config from default path.
+Starting API server on port http://127.0.0.1:2703
+```
+
+Now you can visit Web UI at: http://127.0.0.1:2703
+
+> 💡 You can also start gobackup in front by use `gobackup run`.
+
+## Perform Backup
 
 ```bash
 $ gobackup perform

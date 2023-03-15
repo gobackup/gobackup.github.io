@@ -1,0 +1,29 @@
+---
+title: Use Docker
+---
+
+# GoBackup Docker
+
+We builded a Docker image for GoBackup. You can use it to run GoBackup in a container.
+
+## Usage
+
+Create `gobackup.yml` in `./gobackup` folder.
+
+```bash
+mkdir gobackup
+touch gobackup/gobackup.yml
+```
+
+Run GoBackup in Docker.
+
+```bash
+VERSION=v2.0.0-rc0
+
+docker run -d --name gobackup \
+  -v $(pwd)/gobackup:/etc/gobackup \
+  -p 2703:2703 \
+  huacnlee/gobackup:$VERSION
+```
+
+Now can access GoBackup Web UI at http://127.0.0.1:2703.
