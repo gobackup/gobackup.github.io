@@ -59,3 +59,17 @@ models:
         password: root
         args: --if-exists --no-owner
 ```
+
+## Restore Database
+
+You can use `psql` command to restore database.
+
+We need to download the backup file first, and extract the archive file into `.sql` file.
+
+Now we may have a `my_app/my_app/my_app_production.sql`.
+
+Use this command to restore database:
+
+```bash
+$ psql -U postgres -d my_app_production -f my_app/my_app/my_app_production.sql
+```
