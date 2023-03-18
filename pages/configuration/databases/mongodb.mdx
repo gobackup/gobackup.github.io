@@ -42,6 +42,8 @@ GoBackup uses `mongodump` utility to backup MongoDB database files.
 - `password`
 - `authdb` - authenticationDatabase arg or `mongodump`
 - `oplog` - oplog arg or `mongodump`, default: `false`
+- `exclude_tables` - Array of collections to exclude from backup, default: `[]`
+- `args` - Additional options for `mongodump` utility, for example: `--gzip --dumpDbUsersAndRoles`
 
 https://github.com/huacnlee/gobackup/blob/master/database/mongodb.go
 
@@ -59,4 +61,8 @@ models:
         username: root
         password: root
         oplog: true
+        exclude_tables: 
+          - collection1
+          - collection2
+        args: --gzip --dumpDbUsersAndRoles
 ```

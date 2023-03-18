@@ -17,6 +17,7 @@
   },
   "installation": "",
   "getting-started": {},
+  "docker": "",
   "schedule": "Schedule",
   "-- configuration": {
     "type": "separator",
