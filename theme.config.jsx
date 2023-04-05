@@ -44,7 +44,7 @@ export default {
     </>
   ),
   feedback: false,
-  footer: false,
+  footer: <></>,
   docsRepositoryBase:
     'https://github.com/gobackup/gobackup.github.io/edit/main',
   project: {
