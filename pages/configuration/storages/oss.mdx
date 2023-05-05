@@ -13,5 +13,25 @@ Storage backup file to [Aliyun OSS](https://www.aliyun.com/product/oss).
 - `access_key_secret` - Aliyun access_key_secret
 - `timeout` - Set timeout of remote upload, default: `300`
 - `max_retries` - Max retries, default: 3
+- `storage_class` - Default: `Archive`
+
+## Storage Class
+
+> Since: 2.0.2
+
+You can use `storage_class` to set the storage class of the object. The following storage classes are available:
+
+| Storage Class | Description                     |
+| ------------- | ------------------------------- |
+| `Standard`    | Standard storage class          |
+| `IA`          | Infrequent Access storage class |
+| `Archive`     | Archive storage class           |
+| `ColdArchive` | Cold Archive storage class      |
+
+You can visit Aliyun documention to learn more about [Storage Classes](https://help.aliyun.com/document_detail/51374.htm).
+
+## More details
+
+You can checkout the `oss.go` for more details.
 
 https://github.com/gobackup/gobackup/blob/main/storages/oss.go

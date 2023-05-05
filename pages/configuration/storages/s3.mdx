@@ -14,6 +14,7 @@ Storage backup file to [Amazon AWS S3](https://aws.amazon.com/s3/).
 - `timeout` - Set timeout of remote upload, default: `300`
 - `max_retries` - Max retries, default: 3
 - `endpoint` - Special endpoint
+- `storage_class` - Storage class, default: `STANDARD_IA`
 
 https://github.com/gobackup/gobackup/blob/main/storages/s3.go
 
@@ -28,6 +29,28 @@ https://github.com/gobackup/gobackup/blob/main/storages/s3.go
 - `ap-northeast-1` - Asia Pacific (Tokyo)
 - `sa-east-1` - South America (Sao Paulo)
 - `cn-north-1` - China North 1
+
+## Storage Class
+
+> Since: 2.0.2
+
+You can use `storage_class` to set the storage class of the object.
+
+Here is a list of available storage classes:
+
+| Storage Class         | Description                                                                                                         |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `STANDARD`            | S3 Standard (default): Frequently accessed data (more than once a month) with millisecond access.                   |
+| `STANDARD_IA`         | S3 Standard-IA: Long-lived, infrequently accessed data (once a month) with millisecond access                       |
+| `INTELLIGENT_TIERING` | S3 Intelligent-Tiering: Data with unknown, changing, or unpredictable access patterns                               |
+| `ONEZONE_IA`          | S3 One Zone-IA: Long-lived, infrequently accessed, non-critical data stored in a single AZ, with millisecond access |
+| `GLACIER`             | S3 Glacier: Long-term data archiving with retrieval times ranging from minutes to hours                             |
+| `DEEP_ARCHIVE`        | S3 Glacier Deep Archive: Long-term data archiving with retrieval times ranging from hours to days                   |
+| `OUTPOSTS`            | S3 on Outposts: Data stored on S3 on AWS Outposts                                                                   |
+| `GLACIER_IR`          | S3 Glacier Instant Retrieval: Data archiving with retrieval times ranging from milliseconds to seconds              |
+| `SNOW`                | S3 Snowball: Data stored on a Snowball device                                                                       |
+
+You can visit AWS documention to learn more about [storage classes](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html).
 
 ## Example
 
