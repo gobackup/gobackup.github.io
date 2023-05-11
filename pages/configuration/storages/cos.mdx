@@ -15,7 +15,18 @@ Storage backup file to [QCloud COS](https://cloud.tencent.com/product/cos), this
 - `secret_access_key` - QCloud API secret
 - `timeout` - Set timeout of remote upload, default: `300`
 - `max_retries` - Max retries, default: 3
+- `storage_class` - Default: `STANDARD_IA`
 
 ## Regions
 
 https://cloud.tencent.com/document/product/436/6224
+
+## Storage Class
+
+- `STANDARD`
+- `STANDARD_IA` (default)
+- `ARCHIVE`
+- `DEEP_ARCHIVE`
+- `INTELLIGENT_TIERING`
+
+https://cloud.tencent.com/document/product/436/33417

@@ -15,7 +15,17 @@ Storage backup file to [Qiniu Kodo](https://www.qiniu.com/products/kodo), this i
 - `secret_access_key` - Qiniu API secret
 - `timeout` - Set timeout of remote upload, default: `300`
 - `max_retries` - Max retries, default: 3
+- `storage_class` - Default: `LINE`
 
 ## Regions
 
 https://developer.qiniu.com/kodo/4088/s3-access-domainname
+
+## Storage Class
+
+- `STANDARD` (default)
+- `LINE`
+- `GLACIER`
+- `DEEP_ARCHIVE`
+
+https://developer.qiniu.com/kodo/5906/storage-type
