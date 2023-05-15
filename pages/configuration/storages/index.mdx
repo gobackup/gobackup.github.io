@@ -9,6 +9,7 @@ Use `storages` config to set storages.
 ```yml
 models:
   my_app:
+    default_storage: s3
     storages:
       local_disk:
         type: local
@@ -22,6 +23,8 @@ models:
 ```
 
 When you set up multiple storages, GoBackup will upload backup file to all storages.
+
+The `default_storage` is optional, for special a storage to Web UI browser, if you don't set it, GoBackup will use the first storage as default.
 
 ## Cycling
 

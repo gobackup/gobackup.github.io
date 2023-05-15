@@ -1,0 +1,30 @@
+# MinIO
+
+> since: 2.1.0
+
+[MinIO](https://min.io) is a S3 compatible object storage server. GoBackup supports MinIO as a storage backend.
+
+## Config keys
+
+> NOTE: You can also use `type: s3` and special your MinIO host on `endpoint` to use MinIO in the lower GoBackup version.
+
+`type: minio`
+
+- `bucket` - MinIO bucket name
+- `endpoint` - Your MinIO host, e.g.: `https://localhost:9000`
+- `region` - MinIO region, default: `us-east-1`
+- `path` - remote path for save
+- `access_key_id` - Qiniu API key
+- `secret_access_key` - Qiniu API secret
+- `timeout` - Set timeout of remote upload, default: `300`
+- `max_retries` - Max retries, default: 3
+
+## Regions
+
+The default MinIO region is `us-east-1`. 
+
+If your MinIO server has changed that, you can use `region` to set it.
+
+## Storage Class
+
+Not supports.
