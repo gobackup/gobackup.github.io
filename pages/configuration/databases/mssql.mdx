@@ -1,0 +1,66 @@
+---
+title: Microsoft SQL Server
+---
+
+import { Tab, Tabs } from 'nextra-theme-docs';
+
+# Microsoft SQL Server
+
+GoBackup uses [SqlPackage](https://learn.microsoft.com/en-us/sql/tools/sqlpackage/sqlpackage)  to export Microsoft SQL Server database into a `.sql` file.
+
+## Install tool
+
+So you need to install `sqlpackage` first.
+
+<Tabs items={['Ubutnu Server', 'macOS']}>
+  <Tab>
+    ```bash
+    $ sudo apt-get install libunwind8
+    $ wget https://aka.ms/sqlpackage-linux -O sqlpackage-linux-latest.zip
+    $ sudo mkdir /user/local/sqlpackage
+    $ sudo unzip sqlpackage-linux-latest.zip -d sqlpackage
+    $ chmod +x /user/local/sqlpackage/sqlpackage
+    $ sudo ln -s /user/local/sqlpackage/sqlpackage /usr/local/bin/sqlpackage
+    ```
+  </Tab>
+  <Tab>
+    ```bash
+    $ wget https://aka.ms/sqlpackage-linux -O sqlpackage-linux-latest.zip
+    $ sudo mkdir /user/local/sqlpackage
+    $ sudo unzip sqlpackage-linux-latest.zip -d sqlpackage
+    $ chmod +x /user/local/sqlpackage/sqlpackage
+    $ sudo ln -s /user/local/sqlpackage/sqlpackage /usr/local/bin/sqlpackage
+    ```
+  </Tab>
+</Tabs>
+
+More infomaion about installation: https://learn.microsoft.com/en-us/sql/tools/sqlpackage/sqlpackage-download
+
+## Config keys
+
+`type: mssql`
+
+- `host` - SQL Server host, default: `127.0.0.1`
+- `port` - SQL Server port, default: `1433`
+- `database` - Database name
+- `username` - Username, default: `sa`
+- `password` - Password
+- `trustServerCertificate` - Will be passed to `sqlpackage` as `--trustServerCertificate` argument, default: `false`
+- `args` - Additional options for `sqlpackage` utility
+
+https://github.com/gobackup/gobackup/blob/main/database/mssql.go
+
+## Example
+
+```yml
+models:
+  my_app:
+    databases:
+      my_app:
+        type: mssql
+        host: 127.0.0.1
+        port: 1433
+        database: my_app_production
+        username: sa
+        password: sapassword
+```

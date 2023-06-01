@@ -5,6 +5,7 @@
   "mysql": "",
   "postgresql": "",
   "mongodb": "",
+  "mssql": "",
   "redis": "",
   "sqlite": ""
 }
