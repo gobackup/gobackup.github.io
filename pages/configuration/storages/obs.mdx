@@ -1,0 +1,29 @@
+# Huawei OBS
+
+> Since: 2.3.0
+
+Storage backup file to [Huawei OBS](https://www.huaweicloud.com/en-us/product/obs.html) (Object Storage Service), this is based on S3 compatibility.
+
+## Config keys
+
+`type: obs`
+
+- `bucket` - OBS bucket name
+- `region` - OBS region, default: `cn-north-1`
+- `path` - remote path for save
+- `access_key_id` - OBS API key
+- `secret_access_key` - OBS API secret
+- `timeout` - Set timeout of remote upload, default: `300`
+- `max_retries` - Max retries, default: 3
+- `storage_class` - Storage class, default: `STANDARD_IA`
+
+## Regions
+
+https://developer.huaweicloud.com/endpoint?OBS
+
+## Storage Class
+
+- `STANDARD`
+- `STANDARD_IA` (default)
+- `GLACIER`
+- `DEEP_ARCHIVE`

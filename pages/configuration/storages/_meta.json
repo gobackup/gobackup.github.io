@@ -16,5 +16,6 @@
   "us3": "UCloud US3",
   "kodo": "Qiniu Kodo",
   "bos": "Baidu BOS",
-  "minio": "MinIO"
+  "minio": "MinIO",
+  "obs": "Huawei OBS"
 }
