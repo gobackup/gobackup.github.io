@@ -17,5 +17,6 @@
   "kodo": "Qiniu Kodo",
   "bos": "Baidu BOS",
   "minio": "MinIO",
-  "obs": "Huawei OBS"
+  "obs": "Huawei OBS",
+  "tos": "Volcengine TOS"
 }

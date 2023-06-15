@@ -1,0 +1,34 @@
+# Volcengine TOS
+
+> Since: v2.4.0
+
+Storage backup file to [Volcengine TOS](https://www.volcengine.com/product/tos), this is based on S3 compatibility.
+
+## Config keys
+
+`type: tos`
+
+- `bucket` - Volcengine TOS bucket name
+- `region` - Volcengine TOS region, default: `cn-beijing`
+- `path` - Remote path for save
+- `access_key_id` - Volcengine TOS Access Key ID
+- `secret_access_key` - Volcengine TOS Access Key secret
+- `timeout` - Set timeout of remote upload, default: `300`
+- `max_retries` - Max retries, default: 3
+- `storage_class` - Default: `STANDARD_IA`
+
+## Regions
+
+- `cn-beijing` (default)
+- `cn-shanghai`
+- `cn-guangzhou`
+
+https://www.volcengine.com/docs/6349/107356
+
+## Storage Class
+
+- `STANDARD`
+- `STANDARD_IA` (default)
+- `GLACIER_IR`
+
+https://www.volcengine.com/docs/6349/147050
