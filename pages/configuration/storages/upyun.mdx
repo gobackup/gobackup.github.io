@@ -1,0 +1,37 @@
+# UpYun
+
+> Since: v2.6.0
+
+Storage backup file to [UpYun](https://www.upyun.com), this is based on S3 compatibility.
+
+
+## Config keys
+
+`type: upyun`
+
+- `bucket` - UpYun bucket name
+- `path` - Remote path for save
+- `access_key_id` - UpYun Access Key ID
+- `secret_access_key` - UpYun Access Key secret
+- `timeout` - Set timeout of remote upload, default: `300`
+- `max_retries` - Max retries, default: 3
+
+https://help.upyun.com/knowledge-base/s3-api
+
+## Storage Class
+
+UpYun does not support `storage_class` option.
+
+> IMPORTENT: UpYun storage by S3 API, it only support `STANDARD (标准)` storage class, if your bucket is `STANDARD_IA (低频)` or other, then will return 403 error. 
+
+- `STANDARD`
+
+https://help.upyun.com/knowledge-base/s3-api
+
+## Region
+
+Unlike other S3 compatibility service, UpYun does not support `region` option.
+
+## UpYun Operator
+
+You can visit [UpYun - Operators](https://console.upyun.com/account/operators/) page to create a operator, then you will get your `AccessKey` and `SecretAccessKey`.

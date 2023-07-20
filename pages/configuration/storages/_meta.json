@@ -18,5 +18,6 @@
   "bos": "Baidu BOS",
   "minio": "MinIO",
   "obs": "Huawei OBS",
-  "tos": "Volcengine TOS"
+  "tos": "Volcengine TOS",
+  "upyun": "UpYun"
 }
