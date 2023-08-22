@@ -6,7 +6,7 @@ import { Tab, Tabs } from 'nextra-theme-docs';
 
 # Redis
 
-GoBackup uses `redis-cli` utility to export MySQL database into a `dump.db` file.
+GoBackup uses `redis-cli` utility to export a Redis instance into a `dump.rdb` file.
 
 ## Install tool
 
@@ -37,7 +37,7 @@ You must install `redis-cli` utility first.
 
 ## Config keys
 
-`type: mysql`
+`type: redis`
 
 - `mode` - Redis dump mode, default: `sync`
   - `sync` - For remote Redis server use sync to export.
