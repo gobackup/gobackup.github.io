@@ -9,7 +9,7 @@ export default {
     light: 222,
   },
   sidebar: {
-    defaultMenuCollapseLevel: 2,
+    defaultMenuCollapseLevel: 3,
     titleComponent: ({ title, type }) => {
       return <div className="text-gray-700 dark:text-gray-100">{title}</div>;
     },

@@ -6,3 +6,13 @@
 body {
   @apply font-sans;
 }
+
+.dark {
+  --shiki-token-string: #caccca;
+  --shiki-token-keyword: #9a9576;
+  --shiki-token-constant: #ae9513;
+  --shiki-token-string-expression: #76ba53;
+  --shiki-token-string: #76ba53;
+  --shiki-token-keyword: #ae9513;
+  --shiki-token-function: #c0b298;
+}
