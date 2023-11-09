@@ -135,3 +135,96 @@ POSTGRESQL_PASSWORD=this-is-my-password
 AWS_ACCESS_KEY_ID=xxxxxx
 AWS_SECRET_ACCESS_KEY=xxxxxxxxxxx
 ```
+
+## Config Keys
+
+| Field   | Type                    | Description                                                                                 | Default                                                    |
+| ------- | ----------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| web     | [WebConfig](#webconfig) | Web server config                                                                           |                                                            |
+| workdir | string                  | Special a work dir for GoBackup to generate some temp files.<br/>e.g: `/path/of/tmp/folder` | Default is system tmp folder.<br/>e.g. on Linux is: `/tmp` |
+| models  | []ModelConfig           | Model configs, see: [ModelConfig](#modelconfig)                                             | []                                                         |
+
+### WebConfig
+
+| Field    | Type   | Description                     | Default     |
+| -------- | ------ | ------------------------------- | ----------- |
+| host     | string | Web server host                 | `127.0.0.1` |
+| port     | string | Web server port                 | `2703`      |
+| username | string | Web server Basic Auth username. |             |
+| password | string | Web server Basic Auth password. |             |
+
+### ModelConfig
+
+| Field           | Type                              | Description                                              | Default |
+| --------------- | --------------------------------- | -------------------------------------------------------- | ------- |
+| description     | string                            | The description of this model.                           |         |
+| schedule        | [ScheduleConfig](#scheduleconfig) | Schedule config                                          |         |
+| databases       | []DatabaseConfig                  | Database configs, see: [DatabaseConfig](#databaseconfig) |
+| default_storage | string                            | The default storage name.                                |         |
+| storages        | []StorageConfig                   | see: [StorageConfig](#storageconfig)                     |         |
+| notifiers       | []NotifierConfig                  | see: [NotifierConfig](#notifierconfig)                   |         |
+| compress_with   | [CompressConfig](#compressconfig) | Compressor config                                        |         |
+| encrypt_with    | [EncryptConfig](#encryptconfig)   | Encryptor config                                         |         |
+| archive         | [ArchiveConfig](#archiveconfig)   | Archive config                                           |         |
+| split_with      | [SplitConfig](#splitconfig)       | Split config                                             |         |
+
+### DatabaseConfig
+
+| Field | Type   | Description                  | Default |
+| ----- | ------ | ---------------------------- | ------- |
+| type  | string | Database type, e.g.: `mysql` |         |
+
+More about database please checkout databases doc.
+
+### StorageConfig
+
+| Field | Type   | Description                       | Default |
+| ----- | ------ | --------------------------------- | ------- |
+| type  | string | Storage provider type, e.g.: `s3` |         |
+
+More about database please checkout storages doc.
+
+### NotifierConfig
+
+| Field      | Type   | Description                                 | Default |
+| ---------- | ------ | ------------------------------------------- | ------- |
+| type       | string | Notifier type, e.g.: `github`               |         |
+| on_success | bool   | Enable or disable notify on backup success. | true    |
+| on_failure | bool   | Enable or disable notify on backup failure. | true    |
+
+### CompressConfig
+
+| Field | Type   | Description        | Default |
+| ----- | ------ | ------------------ | ------- |
+| type  | string | The compress type. |         |
+
+### EncryptConfig
+
+| Field | Type   | Description       | Default |
+| ----- | ------ | ----------------- | ------- |
+| type  | string | The encrypt type. |         |
+
+### ArchiveConfig
+
+| Field    | Type     | Description                          | Default |
+| -------- | -------- | ------------------------------------ | ------- |
+| includes | []string | Paths or filenames want to archive.  |         |
+| excludes | []string | Paths or filenames want to excludes. |         |
+
+### SplitConfig
+
+| Field            | Type | Description                                           | Default |
+| ---------------- | ---- | ----------------------------------------------------- | ------- |
+| chunk_size       | int  | Number of chunks to split.                            |         |
+| suffix_length    | int  | Special that the part file name suffix number length. | `3`     |
+| numeric_suffixes | bool | Use numeric suffix.                                   | `true`  |
+
+### ScheduleConfig
+
+| Field | Type   | Description                                                                                                                                                                                                        | Default |
+| ----- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
+| cron  | string | Config cron rule, if you want use cron format schedule, keep empty will use `every`, `at`.                                                                                                                         |         |
+| every | string | Every schedules a new periodic Job with an interval. <br/>Interval can be an int, time.Duration or a string that parses with time.ParseDuration(). Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h". |         |
+| at    | string | At schedules the Job at a specific time of day in the form "HH:MM:SS" or "HH:MM" or time.Time (note that only the hours, minutes, seconds and nanos are used).                                                     |         |
+
+More about schedule see: https://github.com/go-co-op/gocron
