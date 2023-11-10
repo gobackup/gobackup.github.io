@@ -5,17 +5,17 @@ https://gobackup.github.io
 ## Development
 
 ```bash
-pnpm install
+bun install
 ```
 
 ### Start Dev server
 
 ```bash
-pnpm dev
+bun run dev
 ```
 
 ## Publish pages
 
 ```bash
-pnpm build
+bun run build
 ```
