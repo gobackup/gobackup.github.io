@@ -1,0 +1,75 @@
+---
+title: InfluxDB
+---
+
+import { Tab, Tabs } from 'nextra-theme-docs';
+
+# InfluxDB
+
+> since: 2.7.0
+
+GoBackup uses [influx](https://docs.influxdata.com/influxdb/v2/reference/cli/influx/?t=Linux) cli tool export data stored in [InfluxDB](https://www.influxdata.com/products/influxdb/).
+
+In current, we only support InfluxDB v2.
+
+## Install tool
+
+You must install `influx` cli first.
+
+https://docs.influxdata.com/influxdb/v2/reference/cli/influx/
+
+<Tabs items={['Linux', 'macOS']}>
+  <Tab>
+    Visit: https://docs.influxdata.com/influxdb/v2/reference/cli/influx/?t=Linux
+  </Tab>
+  <Tab>
+    Install via Homebrew:
+    
+    ```bash
+    $ brew install influxdb-cli
+    ```
+  </Tab>
+</Tabs>
+
+## Config keys
+
+`type: influxdb2`
+
+> `type`, `token` and `host` properties are required
+
+- `type` must be `influxdb2` 
+- `host` (string) - HTTP address of InfluxDB
+- `token` (string) - InfluxDB v2 API token
+all other properties of `influxdb2` database are optional:
+- `bucket` (string) - name of the bucket to back up from
+- `bucket_id` (string) - ID of the bucket to back up from
+- `org`(string) - organization name
+- `org_id` (string) - organization ID
+- `skip_verify` (boolean) - whether to skip TLS certificate verification
+- `http_debug` (boolean) - whether to inspect communication with InfluxDB server
+
+https://github.com/gobackup/gobackup/blob/main/database/influxdb2.go
+
+## Example
+
+```yml
+models:
+  influxdb2_backup:
+    description: "Perform local influxdb v2 backup"
+    schedule:
+      # At 04:05 on Sunday.
+      cron: "5 4 * * sun"
+    compress_with:
+      type: tgz
+    default_storage: local
+    storages:
+      local:
+        type: local
+        keep: 10
+        path: /tmp/gobackup
+    databases:
+      influxdbv2-oss:
+        type: influxdb2
+        host: http://localhost:8086
+        token: my-token
+```
