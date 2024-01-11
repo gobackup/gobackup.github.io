@@ -8,7 +8,7 @@ import { Tab, Tabs } from 'nextra-theme-docs';
 
 > Since: v2.8.0
 
-GoBackup uses `mariadb-backup` utility to export MariaDB database into a `.sql` file.
+GoBackup uses `mariadb-backup` utility to export MariaDB database into a custom backup format, consisting of files with extensions like .frm for table structure files and .ibd for InnoDB data files.
 
 ## Install tool
 
@@ -43,7 +43,7 @@ So you need to install `mariadb-backup` first.
 - `host` - MariaDB server host, default: `localhost`
 - `port` - MariaDB server port, default: `3306`
 - `socket` - MariaDB server, if use socket, default: ``
-- `database` - database name
+- `database` - database name, default: ``
 - `username` - default: `root`
 - `password`
 - `args` - Additional options for `mariadb-backup` utility.
