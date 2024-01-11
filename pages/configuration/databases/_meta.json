@@ -8,5 +8,6 @@
   "mssql": "",
   "redis": "",
   "sqlite": "",
-  "influxdb": ""
+  "influxdb": "",
+  "mariadb": ""
 }

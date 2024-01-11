@@ -1,0 +1,66 @@
+---
+title: MariaDB
+---
+
+import { Tab, Tabs } from 'nextra-theme-docs';
+
+# MariaDB
+
+> Since: v2.8.0
+
+GoBackup uses `mariadb-backup` utility to export MariaDB database into a `.sql` file.
+
+## Install tool
+
+So you need to install `mariadb-backup` first.
+
+<Tabs items={['Ubuntu Server', 'Alpine Linux', 'macOS']}>
+  <Tab>
+    ```bash 
+    $ sudo apt install mariadb-backup
+    ```
+  </Tab>
+  <Tab>
+    ```bash 
+    $ sudo apk add mariadb-backup
+    ```
+  </Tab>
+  <Tab>
+    Install via Homebrew:
+
+    ```bash
+    $ brew install mariadb
+    ```
+
+    https://formulae.brew.sh/formula/mariadb
+  </Tab>
+</Tabs>
+
+## Config keys
+
+`type: mariadb`
+
+- `host` - MariaDB server host, default: `localhost`
+- `port` - MariaDB server port, default: `3306`
+- `socket` - MariaDB server, if use socket, default: ``
+- `database` - database name
+- `username` - default: `root`
+- `password`
+- `args` - Additional options for `mariadb-backup` utility.
+
+https://github.com/gobackup/gobackup/blob/main/database/mysql.go
+
+## Example
+
+```yml
+models:
+  my_app:
+    databases:
+      my_app:
+        type: mariadb
+        host: localhost
+        port: 3306
+        database: my_app_production
+        username: root
+        password: root
+```
