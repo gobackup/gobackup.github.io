@@ -18,6 +18,11 @@ web:
 models:
   # special a model name
   model_name1:
+    before_script: |
+      # Run script before this model perform backup.
+      echo "before script"
+    after_script: |
+      echo "after script"
     # config compress
     compress_with:
       # compress type
@@ -167,6 +172,37 @@ AWS_SECRET_ACCESS_KEY=xxxxxxxxxxx
 | encrypt_with    | [EncryptConfig](#encryptconfig)   | Encryptor config                                         |         |
 | archive         | [ArchiveConfig](#archiveconfig)   | Archive config                                           |         |
 | split_with      | [SplitConfig](#splitconfig)       | Split config                                             |         |
+| before_script   | string                            | Run script before this model perform backup.             |         |
+| after_script    | string                            | Run script after this model perform backup.              |         |
+
+#### Run script around backup performing
+
+> Since: v2.9.0
+
+We have `before_script` and `after_script` for let use to special that run script **before** or **after** this model perform backup.
+
+This is useful when you want to do something complex workflow, e.g.:
+
+1. Stop database service;
+2. Backup;
+3. Start database service again.
+
+```yml
+models:
+  my_app:
+    before_script: |
+      # Stop database service
+      systemctl stop mysql
+    after_script: |
+      # Start database service
+      systemctl start mysql
+    databases:
+      mysql:
+        type: mysql
+        host: localhost
+        database: my_app_production
+        username: root
+```
 
 ### DatabaseConfig
 
