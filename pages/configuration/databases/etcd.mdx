@@ -1,0 +1,65 @@
+---
+title: etcd
+---
+
+import { Tab, Tabs } from 'nextra-theme-docs';
+
+# etcd
+
+> Since: 2.10.0
+
+GoBackup uses [etcdctl](https://etcd.io/docs/v3.5/quickstart/) cli tool export data stored in [etcd](https://etcd.io/).
+
+## Install tool
+
+You must install `etcdctl` cli first.
+
+https://etcd.io/docs/v3.5/install/
+
+<Tabs items={['Linux', 'macOS']}>
+  <Tab>
+    Visit: https://etcd.io/docs/v3.5/install/#install-pre-built-binaries
+  </Tab>
+  <Tab>
+    Install via Homebrew:
+    
+    ```bash
+    $ brew install etcd
+    ```
+  </Tab>
+</Tabs>
+
+## Config keys
+
+`type: etcd`
+
+> `endpoints` properties is required
+
+- `type` must be `etcd` 
+- `endpoints` ([string]) - etcd endpoints, this is a string array type.
+
+https://github.com/gobackup/gobackup/blob/main/database/etcd.go
+
+## Example
+
+```yml
+models:
+  etcd_backup:
+    description: "Perform local etcd backup"
+    schedule:
+      # At 04:05 on Sunday.
+      cron: "5 4 * * sun"
+    compress_with:
+      type: tgz
+    default_storage: local
+    storages:
+      local:
+        type: local
+        keep: 10
+        path: /tmp/gobackup
+    databases:
+      my-etcd:
+        type: etcd
+        endpoints:
+          - 127.0.0.1:2379
+```

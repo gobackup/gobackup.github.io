@@ -9,5 +9,6 @@
   "redis": "",
   "sqlite": "",
   "influxdb": "",
-  "mariadb": ""
+  "mariadb": "",
+  "etcd": ""
 }
