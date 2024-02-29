@@ -1,0 +1,17 @@
+## Installation
+
+This project we use [Bun](https://bun.sh) to run development.
+
+```bash
+$ bun install
+```
+
+## Start Development Server
+
+```bash
+$ bun run dev
+```
+
+## Release Website
+
+Just push to `main` branch, and the website will be deployed automatically.
