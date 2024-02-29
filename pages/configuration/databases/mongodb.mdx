@@ -11,22 +11,23 @@ GoBackup uses `mongodump` utility to backup MongoDB database files.
 ## Install tool
 
 <Tabs items={['Ubuntu Server', 'Alpine Linux', 'macOS']}>
-  <Tab>
-    Visit https://www.mongodb.com/try/download/database-tools and download [MongoDB Tools](https://www.mongodb.com/try/download/database-tools).
-  </Tab>
-  <Tab>
-    ```bash 
+<Tab>
+Visit https://www.mongodb.com/try/download/database-tools and download [MongoDB Tools](https://www.mongodb.com/try/download/database-tools).
+</Tab>
+<Tab>
+`bash
     $ sudo apk add mongodb-tools
-    ```
-  </Tab>
-  <Tab>
-    Install via Homebrew:
+    `
+</Tab>
+<Tab>
+Install via Homebrew:
 
     ```bash
     $ brew install mongodb-database-tools
     ```
 
     https://www.mongodb.com/docs/database-tools/installation/installation-macos
+
   </Tab>
 </Tabs>
 
@@ -34,6 +35,7 @@ GoBackup uses `mongodump` utility to backup MongoDB database files.
 
 `type: mongodb`
 
+- `uri` - MongoDB connection URI, for example: `mongodb://root:root@localhost:27017/my_app_production?authSource=admin`, if you have present this, then `host`, `port`, `username`, `password`, `database` will be ignored.
 - `host` - MongoDB server host, default: `127.0.0.1`
 - `port` - MongoDB server port, default: `27017`
 - `socket` - MongoDB server, if use socket, for example: `/tmp/mongodb-27017.sock`, default: ``
@@ -61,7 +63,7 @@ models:
         username: root
         password: root
         oplog: true
-        exclude_tables: 
+        exclude_tables:
           - collection1
           - collection2
         args: --gzip --dumpDbUsersAndRoles
