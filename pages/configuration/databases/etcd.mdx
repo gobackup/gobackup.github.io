@@ -17,15 +17,16 @@ You must install `etcdctl` cli first.
 https://etcd.io/docs/v3.5/install/
 
 <Tabs items={['Linux', 'macOS']}>
-  <Tab>
-    Visit: https://etcd.io/docs/v3.5/install/#install-pre-built-binaries
-  </Tab>
-  <Tab>
-    Install via Homebrew:
-    
+<Tab>
+Visit: https://etcd.io/docs/v3.5/install/#install-pre-built-binaries
+</Tab>
+<Tab>
+Install via Homebrew:
+
     ```bash
     $ brew install etcd
     ```
+
   </Tab>
 </Tabs>
 
@@ -35,8 +36,8 @@ https://etcd.io/docs/v3.5/install/
 
 > `endpoints` properties is required
 
-- `type` must be `etcd` 
-- `endpoints` ([string]) - etcd endpoints, this is a string array type.
+- `type` must be `etcd`
+- `endpoint` (string) - etcd endpoint.
 
 https://github.com/gobackup/gobackup/blob/main/database/etcd.go
 
@@ -60,6 +61,5 @@ models:
     databases:
       my-etcd:
         type: etcd
-        endpoints:
-          - 127.0.0.1:2379
+        endpoint: 127.0.0.1:2379
 ```
