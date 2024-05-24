@@ -15,15 +15,36 @@ mkdir gobackup
 touch gobackup/gobackup.yml
 ```
 
+Write config into `gobackup/gobackup.yml`
+
+```yml
+web:
+  host: 0.0.0.0
+models:
+  my_app:
+    compress_with:
+      type: tgz
+    storages:
+      local:
+        type: local
+        keep: 20
+        path: /root/backups
+    databases:
+      my_app:
+        database: my_app_production
+        type: mysql
+        host: localhost
+        port: 3306
+        username: root
+```
+
 Run GoBackup in Docker.
 
 ```bash
-VERSION=v2.0.0
-
 docker run -d --name gobackup \
   -v $(pwd)/gobackup:/etc/gobackup \
   -p 2703:2703 \
-  huacnlee/gobackup:$VERSION
+  huacnlee/gobackup:latest
 ```
 
 Now can access GoBackup Web UI at http://127.0.0.1:2703.
