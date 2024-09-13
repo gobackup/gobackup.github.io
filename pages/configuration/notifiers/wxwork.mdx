@@ -1,0 +1,24 @@
+# Weixin Work
+
+> Since: 2.12.0
+
+[Weixin Work](https://work.weixin.qq.com/) is a team communication tool.
+
+We can send Weixin Work message by use Webhooks, you can follow the
+[Bot Webhooks Guide](https://developer.work.weixin.qq.com/document/path/99110) to get the webhook `url`.
+
+## Example
+
+```yml
+models:
+  my_app:
+    storages:
+      local:
+        type: local
+        keep: 10
+    notifiers:
+      wxwork:
+        type: wxwork
+        url: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxx-xxxx-xxxx-xxxx
+        on_success: true
+```
