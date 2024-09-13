@@ -48,6 +48,7 @@ You must install `redis-cli` utility first.
 - `invoke_save` - Invoke save before backup, default: `true`
 - `password` - If your Redis server need, default: ``
 - `rdb_path` - `mode: copy` need special this config, default: `/var/lib/redis/dump.rdb`
+- `args` - Additional options for `redis-cli` utility, for example: `--tls --cacert redis_ca.pem`
 
 https://github.com/gobackup/gobackup/blob/main/database/redis.go
 
@@ -63,4 +64,5 @@ models:
         rdb_path: /var/db/redis/dump.rdb
         invoke_save: true
         password: 123456
+        args: --tls --cacert redis_ca.pem
 ```
