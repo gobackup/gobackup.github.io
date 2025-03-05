@@ -1,0 +1,27 @@
+# Healthchecks
+
+> Since: 2.15.0
+
+[Healthchecks](https://healthchecks.io/) is a simple and effective cron job monitoring
+
+Notifications can be sent on both `success` and `failure`. Healthchecks can reduce the number of messages if users
+need to manage multiple backups while keeping active success notifications.
+
+User can follow [Configuring checks](https://healthchecks.io/docs/configuring_checks/) and
+[Configuring notifications](https://healthchecks.io/docs/configuring_notifications/) docs to setup healthchecks.
+
+## Configuration
+
+```yml
+models:
+  my_app:
+    storages:
+      local:
+        type: local
+        keep: 10
+    notifiers:
+      healthchecks:
+        type: healthchecks
+        url: https://healthchecks.domain.tld/ping/uuid
+        on_success: true
+```
