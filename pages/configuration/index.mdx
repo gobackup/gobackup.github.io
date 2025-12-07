@@ -15,6 +15,9 @@ web:
   # port: 2703
   username: <your-name>
   password: <your-web-ui-password>
+  # tls:
+    # certificate: /etc/ssl/gobackup.crt
+    # private_key: /etc/ssl/gobackup.key
 models:
   # special a model name
   model_name1:
@@ -151,12 +154,30 @@ AWS_SECRET_ACCESS_KEY=xxxxxxxxxxx
 
 ### WebConfig
 
-| Field    | Type   | Description                     | Default     |
-| -------- | ------ | ------------------------------- | ----------- |
-| host     | string | Web server host                 | `127.0.0.1` |
-| port     | string | Web server port                 | `2703`      |
-| username | string | Web server Basic Auth username. |             |
-| password | string | Web server Basic Auth password. |             |
+| Field    | Type                    | Description                     | Default     |
+| -------- | ----------------------- | ------------------------------- | ----------- |
+| host     | string                  | Web server host                 | `127.0.0.1` |
+| port     | string                  | Web server port                 | `2703`      |
+| username | string                  | Web server Basic Auth username. |             |
+| password | string                  | Web server Basic Auth password. |             |
+| tls      | [TlsConfig](#tlsconfig) | Web server TLS Config           |             |
+
+#### TlsConfig
+
+> Since: 1.X.X 
+
+WebUI can use HTTPS if you add a certificate and its private key in the configuration.
+
+| Field       | Type   | Description                          | Default |
+| ----------- | ------ | ------------------------------------ | ------- |
+| certificate | string | Path to certificate file             |         |
+| private_key | string | Path to certificate private key file |         |
+
+You can obtain a self signed certificate with this exemple of OpenSSL command:
+
+```shell
+openssl req -x509 -newkey rsa:2048 -nodes -keyout server.key -out server.crt -days 365
+```
 
 ### ModelConfig
 
