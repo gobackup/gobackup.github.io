@@ -1,0 +1,136 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "GoBackup",
+  "logo": {
+    "dark": "/logo/web-logo-dark.png",
+    "light": "/logo/web-logo.png"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#0D9373",
+    "light": "#07C983",
+    "dark": "#0D9373",
+    "anchors": {
+      "from": "#0D9373",
+      "to": "#07C983"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Releases",
+      "url": "https://github.com/gobackup/gobackup/releases"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "GitHub",
+    "url": "https://github.com/gobackup/gobackup"
+  },
+  "anchors": [
+    {
+      "name": "Documentation",
+      "icon": "book-open-cover",
+      "url": "https://gobackup.github.io"
+    },
+    {
+      "name": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/gobackup/gobackup"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Overview",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "group": "Quick Start",
+      "pages": [
+        "installation",
+        "getting-started",
+        "docker",
+        "schedule"
+      ]
+    },
+    {
+      "group": "Configuration",
+      "pages": [
+        "configuration/index",
+        {
+          "group": "Databases",
+          "pages": [
+            "configuration/databases/index",
+            "configuration/databases/mysql",
+            "configuration/databases/postgresql",
+            "configuration/databases/mongodb",
+            "configuration/databases/mssql",
+            "configuration/databases/redis",
+            "configuration/databases/sqlite",
+            "configuration/databases/influxdb",
+            "configuration/databases/mariadb",
+            "configuration/databases/etcd"
+          ]
+        },
+        "configuration/archive",
+        {
+          "group": "Storages",
+          "pages": [
+            "configuration/storages/index",
+            "configuration/storages/local",
+            "configuration/storages/ftp",
+            "configuration/storages/sftp",
+            "configuration/storages/scp",
+            "configuration/storages/webdav",
+            "configuration/storages/s3",
+            "configuration/storages/oss",
+            "configuration/storages/gcs",
+            "configuration/storages/azure",
+            "configuration/storages/r2",
+            "configuration/storages/spaces",
+            "configuration/storages/b2",
+            "configuration/storages/cos",
+            "configuration/storages/us3",
+            "configuration/storages/kodo",
+            "configuration/storages/bos",
+            "configuration/storages/minio",
+            "configuration/storages/obs",
+            "configuration/storages/tos",
+            "configuration/storages/upyun"
+          ]
+        },
+        {
+          "group": "Compressor",
+          "pages": [
+            "configuration/compressor/index",
+            "configuration/compressor/tar"
+          ]
+        },
+        "configuration/encryptor/openssl",
+        "configuration/splitter",
+        {
+          "group": "Notifiers",
+          "pages": [
+            "configuration/notifiers/index",
+            "configuration/notifiers/mail",
+            "configuration/notifiers/webhook",
+            "configuration/notifiers/discord",
+            "configuration/notifiers/slack",
+            "configuration/notifiers/telegram",
+            "configuration/notifiers/github",
+            "configuration/notifiers/dingtalk",
+            "configuration/notifiers/feishu",
+            "configuration/notifiers/ses",
+            "configuration/notifiers/postmark",
+            "configuration/notifiers/sendgrid",
+            "configuration/notifiers/wxwork",
+            "configuration/notifiers/healthchecks"
+          ]
+        }
+      ]
+    }
+  ],
+  "footerSocials": {
+    "github": "https://github.com/gobackup/gobackup"
+  }
+}
