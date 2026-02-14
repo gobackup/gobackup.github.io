@@ -1,0 +1,129 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "GoBackup",
+  "description": "GoBackup documentation — backup tool for databases and files.",
+  "repository": "https://github.com/gobackup/gobackup",
+  "logo": {
+    "dark": "/logo/web-logo-dark.png",
+    "light": "/logo/web-logo.png"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#000000",
+    "light": "#000000",
+    "dark": "#FFFFFF"
+  },
+  "navbar": {
+    "links": [
+      { "label": "Releases", "href": "https://github.com/gobackup/gobackup/releases" }
+    ],
+    "primary": { "type": "github", "href": "https://github.com/gobackup/gobackup" }
+  },
+  "navigation": {
+    "global": {
+      "anchors": [
+        { "anchor": "Documentation", "icon": "book-open-cover", "href": "https://gobackup.github.io" },
+        { "anchor": "GitHub", "icon": "github", "href": "https://github.com/gobackup/gobackup" }
+      ]
+    },
+    "pages": [
+      {
+        "group": "Overview",
+        "pages": [
+          { "root": "index", "title": "Overview" }
+        ]
+      },
+      {
+        "group": "Quick Start",
+        "pages": [
+          { "root": "installation", "title": "Installation" },
+          { "root": "getting-started", "title": "Getting Started" },
+          { "root": "docker", "title": "Docker" },
+          { "root": "schedule", "title": "Schedule" }
+        ]
+      },
+      {
+        "group": "Configuration",
+        "pages": [
+          { "root": "configuration/index", "title": "Configuration" },
+          {
+            "group": "Databases",
+            "pages": [
+              { "root": "configuration/databases/index", "title": "Databases" },
+              { "root": "configuration/databases/mysql", "title": "MySQL" },
+              { "root": "configuration/databases/postgresql", "title": "PostgreSQL" },
+              { "root": "configuration/databases/mongodb", "title": "MongoDB" },
+              { "root": "configuration/databases/mssql", "title": "MSSQL" },
+              { "root": "configuration/databases/redis", "title": "Redis" },
+              { "root": "configuration/databases/sqlite", "title": "SQLite" },
+              { "root": "configuration/databases/influxdb", "title": "InfluxDB" },
+              { "root": "configuration/databases/mariadb", "title": "MariaDB" },
+              { "root": "configuration/databases/etcd", "title": "ETCD" }
+            ]
+          },
+          { "root": "configuration/archive", "title": "Archive" },
+          {
+            "group": "Storages",
+            "pages": [
+              { "root": "configuration/storages/index", "title": "Storages" },
+              { "root": "configuration/storages/local", "title": "Local" },
+              { "root": "configuration/storages/ftp", "title": "FTP" },
+              { "root": "configuration/storages/sftp", "title": "SFTP" },
+              { "root": "configuration/storages/scp", "title": "SCP" },
+              { "root": "configuration/storages/webdav", "title": "WebDAV" },
+              { "root": "configuration/storages/s3", "title": "S3" },
+              { "root": "configuration/storages/oss", "title": "OSS" },
+              { "root": "configuration/storages/gcs", "title": "GCS" },
+              { "root": "configuration/storages/azure", "title": "Azure" },
+              { "root": "configuration/storages/r2", "title": "R2" },
+              { "root": "configuration/storages/spaces", "title": "Spaces" },
+              { "root": "configuration/storages/b2", "title": "B2" },
+              { "root": "configuration/storages/cos", "title": "COS" },
+              { "root": "configuration/storages/us3", "title": "US3" },
+              { "root": "configuration/storages/kodo", "title": "Kodo" },
+              { "root": "configuration/storages/bos", "title": "BOS" },
+              { "root": "configuration/storages/minio", "title": "MinIO" },
+              { "root": "configuration/storages/obs", "title": "OBS" },
+              { "root": "configuration/storages/tos", "title": "TOS" },
+              { "root": "configuration/storages/upyun", "title": "UPYUN" }
+            ]
+          },
+          {
+            "group": "Compressor",
+            "pages": [
+              { "root": "configuration/compressor/index", "title": "Compressor" },
+              { "root": "configuration/compressor/tar", "title": "Tar Compressor" }
+            ]
+          },
+          { "root": "configuration/encryptor/openssl", "title": "OpenSSL Encryptor" },
+          { "root": "configuration/splitter", "title": "Splitter" },
+          {
+            "group": "Notifiers",
+            "pages": [
+              { "root": "configuration/notifiers/index", "title": "Notifiers" },
+              { "root": "configuration/notifiers/mail", "title": "Mail" },
+              { "root": "configuration/notifiers/webhook", "title": "Webhook" },
+              { "root": "configuration/notifiers/discord", "title": "Discord" },
+              { "root": "configuration/notifiers/slack", "title": "Slack" },
+              { "root": "configuration/notifiers/telegram", "title": "Telegram" },
+              { "root": "configuration/notifiers/github", "title": "GitHub" },
+              { "root": "configuration/notifiers/dingtalk", "title": "DingTalk" },
+              { "root": "configuration/notifiers/feishu", "title": "Feishu" },
+              { "root": "configuration/notifiers/ses", "title": "SES" },
+              { "root": "configuration/notifiers/postmark", "title": "Postmark" },
+              { "root": "configuration/notifiers/sendgrid", "title": "SendGrid" },
+              { "root": "configuration/notifiers/wxwork", "title": "WeChat Work" },
+              { "root": "configuration/notifiers/healthchecks", "title": "Healthchecks" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/gobackup/gobackup"
+    }
+  }
+}
