@@ -38,13 +38,33 @@ models:
         username: root
 ```
 
-Run GoBackup in Docker.
+### Run GoBackup in Docker.
 
 ```bash
 docker run -d --name gobackup \
   -v $(pwd)/gobackup:/etc/gobackup \
+  -v $(pwd)/cycler:/root/.gobackup/cycler \
   -p 2703:2703 \
   huacnlee/gobackup:latest
 ```
 
+`/root/.gobackup/cycler` needs to be persisted for the cycler to work correctly. If this directory is not
+persisted, the cycler will not be able to remove outdated backups after a container restart.
+
+If you want to persist logs as well, instead of `/root/.gobackup/cycler`, you can use `/root/.gobackup` as a volume.
+
 Now can access GoBackup Web UI at http://127.0.0.1:2703.
+
+### Run GoBackup with docker compose.
+
+```yaml
+services:
+  gobackup:
+    image: huacnlee/gobackup:latest
+    ports:
+      - "127.0.0.1:2703:2703"
+    restart: unless-stopped
+    volumes:
+      - ./gobackup.yml:/etc/gobackup/gobackup.yml
+      - ./cycler:/root/.gobackup/cycler
+```
